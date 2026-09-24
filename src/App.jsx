@@ -14,6 +14,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <div className="container" aria-hidden="true"><div className="divider" /></div>
         <About />
         <Projects />
         <Experience />

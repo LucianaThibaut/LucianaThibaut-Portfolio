@@ -183,6 +183,15 @@ ul, ol { list-style: none; }
 }
 .nav-sheet a.is-active { background: var(--surface); }
 
+/* ─── Separador hero / Sobre mí: línea de cota con marcas en los extremos ── */
+.divider { position: relative; height: 1px; background: var(--border-2); }
+.divider::before, .divider::after {
+  content: ''; position: absolute; top: -5px;
+  width: 1px; height: 11px; background: var(--border-2);
+}
+.divider::before { left: 0; }
+.divider::after { right: 0; }
+
 /* ─── Encabezado de sección ────────────────────────────────────────────── */
 .section { padding: var(--section) 0; }
 .section + .section { border-top: 1px solid var(--border); }
