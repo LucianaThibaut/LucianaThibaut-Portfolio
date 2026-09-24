@@ -1,26 +1,15 @@
 import { marqueeItems } from '../data/portfolio'
 
+// Franja de herramientas y especialidades. La lista se duplica para el loop.
 export default function Marquee() {
-  const items = [...marqueeItems, ...marqueeItems, ...marqueeItems]
   return (
-    <div style={{
-      borderTop: '1px solid var(--border)',
-      borderBottom: '1px solid var(--border)',
-      background: 'var(--ink)',
-      overflow: 'hidden',
-      padding: '14px 0',
-    }}>
-      <div className="marquee-track" style={{ display: 'flex', whiteSpace: 'nowrap', width: 'max-content' }}>
-        {items.map((item, i) => (
-          <span key={i} style={{
-            display: 'inline-flex', alignItems: 'center', gap: 20,
-            padding: '0 20px',
-            fontSize: 10, letterSpacing: '0.2em', textTransform: 'uppercase',
-            color: 'rgba(247,244,239,0.45)', fontWeight: 500,
-          }}>
-            {item}
-            <span style={{ color: 'var(--green)', opacity: 0.7 }}>✦</span>
-          </span>
+    <div className="ticker" role="region" aria-label="Herramientas y especialidades">
+      <ul className="sr-only">
+        {marqueeItems.map(item => <li key={item}>{item}</li>)}
+      </ul>
+      <div className="ticker-track" aria-hidden="true">
+        {[...marqueeItems, ...marqueeItems].map((item, i) => (
+          <span key={i} className="ticker-item">{item}</span>
         ))}
       </div>
     </div>

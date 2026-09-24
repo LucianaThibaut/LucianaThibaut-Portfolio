@@ -1,14 +1,22 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef } from 'react'
+
+// Barra de progreso de lectura. Escala en X para no forzar reflow.
 export default function ProgressBar() {
-  const [w, setW] = useState(0)
+  const ref = useRef(null)
+
   useEffect(() => {
-    const fn = () => {
-      const el  = document.documentElement
-      const tot = el.scrollHeight - el.clientHeight
-      setW(tot > 0 ? (el.scrollTop / tot) * 100 : 0)
+    let raf = 0
+    const update = () => {
+      raf = 0
+      const el = document.documentElement
+      const total = el.scrollHeight - el.clientHeight
+      if (ref.current) ref.current.style.transform = `scaleX(${total > 0 ? el.scrollTop / total : 0})`
     }
-    window.addEventListener('scroll', fn, { passive: true })
-    return () => window.removeEventListener('scroll', fn)
+    const onScroll = () => { if (!raf) raf = requestAnimationFrame(update) }
+    update()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => { window.removeEventListener('scroll', onScroll); cancelAnimationFrame(raf) }
   }, [])
-  return <div className="prog" style={{ width: `${w}%` }} />
+
+  return <div ref={ref} className="progress" aria-hidden="true" />
 }

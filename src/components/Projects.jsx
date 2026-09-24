@@ -1,26 +1,13 @@
-import { useEffect, useRef, useState } from 'react'
-import { proyectos } from '../data/portfolio'
+import SectionHead from './SectionHead'
 import DraftFrame from './DraftFrame'
-
-function useReveal(threshold = 0.1) {
-  const ref = useRef(null)
-  const [vis, setVis] = useState(false)
-  useEffect(() => {
-    const obs = new IntersectionObserver(
-      ([e]) => { if (e.isIntersecting) { setVis(true); obs.disconnect() } },
-      { threshold }
-    )
-    if (ref.current) obs.observe(ref.current)
-    return () => obs.disconnect()
-  }, [threshold])
-  return [ref, vis]
-}
+import useReveal, { revealClass } from '../lib/useReveal'
+import { proyectos } from '../data/portfolio'
 
 // Láminas en estilo CAD, una por tipo de trabajo real
 const W = 'rgba(255,255,255,'
 const Sheet = ({ label, children }) => (
   <svg viewBox="0 0 320 180" style={{ width: '100%', height: '100%' }} aria-hidden="true">
-    <rect x="0" y="0" width="320" height="180" fill="#0D0D0D" />
+    <rect x="0" y="0" width="320" height="180" fill="#111311" />
     {[0,1,2,3,4,5,6,7].map(i => <line key={`v${i}`} x1={i*46} y1="0" x2={i*46} y2="180" stroke={`${W}0.04)`} strokeWidth="0.5" />)}
     {[0,1,2,3,4].map(i => <line key={`h${i}`} x1="0" y1={i*45} x2="320" y2={i*45} stroke={`${W}0.04)`} strokeWidth="0.5" />)}
     {children}
@@ -41,7 +28,7 @@ const illustrations = {
       <line x1="191" y1="84" x2="300" y2="84" stroke="#4F8A6B" strokeWidth="1.6" strokeDasharray="4 3" />
       {[[10,84],[101,84],[191,84],[101,150],[191,20]].map(([x,y], i) => (
         <g key={i}>
-          <rect x={x-3.5} y={y-3.5} width="7" height="7" fill="#0D0D0D" stroke={`${W}0.8)`} strokeWidth="1" />
+          <rect x={x-3.5} y={y-3.5} width="7" height="7" fill="#111311" stroke={`${W}0.8)`} strokeWidth="1" />
           <text x={x+6} y={y-6} fontSize="6" fill={`${W}0.35)`} fontFamily="monospace">C-{String(i+1).padStart(2,'0')}</text>
         </g>
       ))}
@@ -56,7 +43,7 @@ const illustrations = {
         <g key={x}>
           <line x1={x} y1="95" x2={x - 18} y2={i % 2 ? 140 : 45} stroke={`${W}0.35)`} strokeWidth="1" />
           <rect x={x - 24} y={(i % 2 ? 140 : 45) - 3} width="12" height="6" fill="none" stroke={`${W}0.5)`} strokeWidth="0.8" />
-          <circle cx={x} cy="95" r="3.5" fill="#0D0D0D" stroke="#4F8A6B" strokeWidth="1.5" />
+          <circle cx={x} cy="95" r="3.5" fill="#111311" stroke="#4F8A6B" strokeWidth="1.5" />
         </g>
       ))}
       <polygon points="280,89 296,95 280,101" fill="#4F8A6B" />
@@ -122,102 +109,54 @@ const illustrations = {
 }
 
 function ProjectSpread({ proyecto, index }) {
-  const [ref, vis] = useReveal(0.15)
-  const IllComp = illustrations[proyecto.plano] || illustrations.pluvial
-  const flip = index % 2 === 1
+  const [ref, visible] = useReveal(0.15)
+  const Lamina = illustrations[proyecto.plano] || illustrations.pluvial
   const num = String(index + 1).padStart(2, '0')
 
-  const fade = (delay = 0) => ({
-    opacity: vis ? 1 : 0,
-    transform: vis ? 'none' : 'translateY(28px)',
-    transition: `opacity 0.8s ${delay}ms cubic-bezier(0.16,1,0.3,1), transform 0.8s ${delay}ms cubic-bezier(0.16,1,0.3,1)`,
-  })
-
   return (
-    <article ref={ref} className={`spread${flip ? ' flip' : ''}`}>
-      {/* Lámina */}
-      <div className="spread-media" style={fade(0)}>
-        <IllComp />
-        {proyecto.destacado && (
-          <span style={{
-            position: 'absolute', top: 14, right: 14,
-            background: 'var(--paper)', color: 'var(--ink)',
-            fontSize: 11, fontWeight: 600, padding: '3px 10px',
-          }}>Destacado</span>
-        )}
+    <article ref={ref} className={`spread${index % 2 ? ' flip' : ''} ${revealClass(visible)}`} aria-labelledby={`p-${proyecto.id}`}>
+      <div className="spread-media">
+        <Lamina />
+        <div className="spread-badges">
+          {proyecto.destacado && <span className="badge is-accent">Destacado</span>}
+        </div>
       </div>
 
-      {/* Texto en marco de dibujo */}
-      <div style={fade(150)}>
-        <DraftFrame overshoot={14} style={{ padding: 'clamp(20px, 2.6vw, 32px)' }}>
-          <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 10, fontFamily: "'JetBrains Mono', monospace" }}>
-            Proyecto {num}
-          </p>
-          <h3 style={{
-            fontSize: 'clamp(24px, 2.4vw, 34px)', fontWeight: 800,
-            letterSpacing: '-0.025em', lineHeight: 1.08, color: 'var(--ink)',
-          }}>
-            {proyecto.titulo}
-          </h3>
-          <div style={{ height: 1, background: 'var(--ink)', margin: '18px 0 12px' }} />
-          <p style={{ fontSize: 14, fontWeight: 600, color: 'var(--green)' }}>
-            {proyecto.subtitulo}
-          </p>
+      <div>
+        <DraftFrame className="spread-frame">
+          <p className="spread-num">Proyecto {num}</p>
+          <h3 id={`p-${proyecto.id}`} className="spread-title">{proyecto.titulo}</h3>
+          <p className="spread-client">{proyecto.subtitulo}</p>
         </DraftFrame>
 
-        <p style={{ fontSize: 15, lineHeight: 1.75, color: 'var(--muted)', marginTop: 28 }}>
-          {proyecto.descripcion}
-        </p>
+        <p className="spread-desc">{proyecto.descripcion}</p>
 
         <dl className="spread-meta">
-          <div><dt>Período</dt><dd>{proyecto.periodo}</dd></div>
           <div><dt>Rol</dt><dd>{proyecto.rol}</dd></div>
-          <div style={{ gridColumn: '1 / -1' }}><dt>Entregables</dt><dd>{proyecto.entregables}</dd></div>
-          <div style={{ gridColumn: '1 / -1' }}><dt>Temas</dt><dd>{proyecto.tags.join(', ')}</dd></div>
+          <div><dt>Período</dt><dd>{proyecto.periodo}</dd></div>
+          <div className="full"><dt>Entregables</dt><dd>{proyecto.entregables}</dd></div>
         </dl>
+
+        <ul className="chips">
+          {proyecto.tags.map(t => <li key={t} className="chip">{t}</li>)}
+        </ul>
       </div>
     </article>
   )
 }
 
 export default function Projects() {
-  const [headRef, headVis] = useReveal(0.1)
-
   return (
-    <section id="proyectos" style={{ borderBottom: '1px solid var(--border)', background: 'var(--paper)' }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '100px 40px' }}>
-
-        {/* Section label */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 64 }}>
-          <span style={{ fontSize: 10, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--muted)', fontWeight: 500 }}>03 /</span>
-          <div style={{ width: 24, height: 1, background: 'var(--border)' }} />
-          <span style={{ fontSize: 10, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--ink)', fontWeight: 600 }}>Proyectos</span>
-        </div>
-
-        {/* Title row */}
-        <div ref={headRef} style={{
-          display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap',
-          marginBottom: 72, gap: 32,
-          opacity: headVis ? 1 : 0,
-          transform: headVis ? 'none' : 'translateY(24px)',
-          transition: 'opacity 0.7s, transform 0.7s',
-        }}>
-          <h2 style={{
-            fontSize: 'clamp(28px, 3vw, 42px)',
-            fontWeight: 800, letterSpacing: '-0.02em', lineHeight: 1.1,
-            color: 'var(--ink)',
-          }}>
-            Trabajo real,<br />documentado en detalle.
-          </h2>
-          <p style={{ fontSize: 14, lineHeight: 1.7, color: 'var(--muted)', maxWidth: 360 }}>
-            Hidráulica, pavimentos, instalaciones y catastro, en obra pública y privada:
-            del cálculo al plano que llega a obra.
-          </p>
-        </div>
-
-        {proyectos.map((p, i) => (
-          <ProjectSpread key={p.id} proyecto={p} index={i} />
-        ))}
+    <section id="proyectos" className="section" aria-labelledby="proyectos-title">
+      <div className="container">
+        <SectionHead
+          id="proyectos-title"
+          num="03"
+          kicker="Proyectos"
+          title="Trabajo real, documentado en detalle."
+          intro="Hidráulica, pavimentos, instalaciones y catastro, en obra pública y privada: del cálculo al plano que llega a obra."
+        />
+        {proyectos.map((p, i) => <ProjectSpread key={p.id} proyecto={p} index={i} />)}
       </div>
     </section>
   )

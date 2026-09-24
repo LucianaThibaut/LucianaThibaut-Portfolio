@@ -1,4 +1,3 @@
-import CustomCursor from './components/CustomCursor'
 import ProgressBar from './components/ProgressBar'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -12,8 +11,8 @@ import Footer from './components/Footer'
 
 export default function App() {
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--paper)' }}>
-      <CustomCursor />
+    <>
+      <a href="#perfil" className="skip-link">Saltar al contenido</a>
       <ProgressBar />
       <Navbar />
       <main>
@@ -26,6 +25,6 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
-    </div>
+    </>
   )
 }
