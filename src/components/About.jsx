@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { personal, habilidades } from '../data/portfolio'
+import { personal, herramientas, formacion, datos } from '../data/portfolio'
 
 function useReveal() {
   const ref = useRef(null)
@@ -15,20 +15,30 @@ function useReveal() {
   return [ref, vis]
 }
 
-function SkillBar({ nombre, nivel, delay, visible }) {
+function ToolGroup({ grupo, items, delay, visible }) {
   return (
     <div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-        <span style={{ fontSize: 12, fontWeight: 500, color: 'var(--ink)', letterSpacing: '0.02em' }}>{nombre}</span>
-        <span style={{ fontSize: 10, color: 'var(--muted)', fontFamily: "'JetBrains Mono', monospace" }}>{nivel}%</span>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 12 }}>
+        <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--ink)' }}>{grupo}</span>
+        <span style={{ fontSize: 10, color: 'var(--muted)', fontFamily: "'JetBrains Mono', monospace" }}>
+          {String(items.length).padStart(2, '0')}
+        </span>
       </div>
-      <div style={{ height: 1, background: 'var(--border)', position: 'relative' }}>
+      <div style={{ height: 1, background: 'var(--border)', position: 'relative', marginBottom: 14 }}>
         <div style={{
           position: 'absolute', top: 0, left: 0, height: '100%',
           background: 'var(--green)',
-          width: visible ? `${nivel}%` : '0%',
+          width: visible ? '100%' : '0%',
           transition: `width 1s ${delay}ms cubic-bezier(0.16,1,0.3,1)`,
         }} />
+      </div>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+        {items.map(t => (
+          <span key={t} style={{
+            border: '1px solid var(--border)', padding: '5px 10px',
+            fontSize: 12, color: 'var(--ink)', background: 'var(--white)',
+          }}>{t}</span>
+        ))}
       </div>
     </div>
   )
@@ -39,10 +49,10 @@ export default function About() {
   const [rightRef, rightVis] = useReveal()
 
   const facts = [
-    { l: 'Especialidad',  v: 'Oficina Técnica' },
-    { l: 'Software clave', v: 'AutoCAD' },
-    { l: 'Disponibilidad', v: 'Inmediata' },
-    { l: 'Modalidad',      v: 'Presencial / Remoto' },
+    { l: 'Especialidad',  v: 'Gestión documental' },
+    { l: 'Título',        v: `${formacion.titulo} · UNLaM` },
+    { l: 'Promedio',      v: formacion.promedio },
+    { l: 'Experiencia',   v: 'Sector público y privado' },
   ]
 
   return (
@@ -109,34 +119,32 @@ export default function About() {
               ))}
             </div>
 
-            {/* Vacancy note */}
+            {/* Idiomas y datos */}
             <div style={{
               borderLeft: '2px solid var(--green)',
               paddingLeft: 16,
+              display: 'flex', flexDirection: 'column', gap: 4,
               opacity: leftVis ? 1 : 0,
               transform: leftVis ? 'none' : 'translateY(20px)',
               transition: 'opacity 0.7s 0.3s, transform 0.7s 0.3s',
             }}>
-              <p style={{ fontSize: 12, lineHeight: 1.7, color: 'var(--muted)' }}>
-                <strong style={{ color: 'var(--green)' }}>Alineada con la vacante:</strong>{' '}
-                Experiencia en interpretación de planos constructivos, fachadas ventiladas, SATE,
-                despieces y cuantificación de materiales HPL, aluminio y fibrocemento.
-              </p>
+              {datos.map(({ l, v }) => (
+                <p key={l} style={{ fontSize: 12, lineHeight: 1.7, color: 'var(--muted)' }}>
+                  <strong style={{ color: 'var(--ink)', fontWeight: 600 }}>{l}:</strong> {v}
+                </p>
+              ))}
             </div>
           </div>
 
-          {/* RIGHT: Skills */}
+          {/* RIGHT: herramientas por área, como en el CV */}
           <div ref={rightRef} style={{
-            display: 'flex', flexDirection: 'column', gap: 24,
+            display: 'flex', flexDirection: 'column', gap: 32,
             opacity: rightVis ? 1 : 0,
             transform: rightVis ? 'none' : 'translateY(24px)',
             transition: 'opacity 0.7s 0.15s, transform 0.7s 0.15s',
           }}>
-            <p style={{ fontSize: 9, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: 8 }}>
-              Nivel de dominio
-            </p>
-            {habilidades.map((h, i) => (
-              <SkillBar key={h.nombre} {...h} delay={i * 90} visible={rightVis} />
+            {herramientas.map((h, i) => (
+              <ToolGroup key={h.grupo} {...h} delay={i * 120} visible={rightVis} />
             ))}
           </div>
         </div>

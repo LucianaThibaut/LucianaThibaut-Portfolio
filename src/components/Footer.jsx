@@ -18,7 +18,7 @@ export default function Footer() {
             fontSize: 8, fontWeight: 700, color: 'var(--green)', letterSpacing: '0.04em',
           }}>LT</span>
           <span style={{ fontSize: 10, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--muted)' }}>
-            Luciana Thibaut — Ingeniera Civil
+            Luciana Thibaut — Ingeniera Civil · Ituzaingó, Buenos Aires
           </span>
         </div>
 
@@ -28,8 +28,8 @@ export default function Footer() {
 
         <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
           {[
-            { l: 'Email', h: 'mailto:luciana.thibaut@gmail.com' },
-            { l: 'LinkedIn', h: 'https://linkedin.com/in/luciana-thibaut' },
+            { l: 'Email', h: 'mailto:lucianathibaut@hotmail.com' },
+            { l: 'Teléfono', h: 'tel:+541139575435' },
           ].map(({ l, h }) => (
             <a key={l} href={h}
               className="hline"

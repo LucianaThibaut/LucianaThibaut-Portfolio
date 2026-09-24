@@ -1,147 +1,217 @@
-// Portfolio data — Luciana Thibaut, Ingeniera Civil
+// Portfolio data — Luciana Thibaut, Ingeniera Civil. Fuente: CV (sept. 2026).
 
 export const personal = {
   nombre: 'Luciana Thibaut',
   titulo: 'Ingeniera Civil',
-  subtitulo: 'Especialista en Documentación Técnica & AutoCAD',
-  email: 'luciana.thibaut@gmail.com',
-  linkedin: 'linkedin.com/in/luciana-thibaut',
-  ubicacion: 'Buenos Aires, Argentina',
+  subtitulo: 'Gestión documental de proyectos de ingeniería',
+  email: 'lucianathibaut@hotmail.com',
+  telefono: '(011) 3957 5435',
+  telefonoHref: 'tel:+541139575435',
+  ubicacion: 'Ituzaingó, Buenos Aires',
   foto: '/luciana.jpg',
   resumen:
-    'Ingeniera Civil con experiencia en oficina técnica, delineación y preparación de obras. Especializada en la elaboración y revisión de planos en AutoCAD para proyectos hidráulicos, de pavimentos y estructuras. Comprometida con la precisión técnica, la documentación detallada y la coordinación efectiva entre equipos de obra y producción.',
+    'Ingeniera Civil con más de 4 años de experiencia en la elaboración, gestión y administración de documentación técnica de proyectos de ingeniería: planos, memorias de cálculo, informes y documentación de obra. Acostumbrada a coordinar información entre áreas técnicas, obra y clientes, con atención al detalle, organización y capacidad de trabajar bajo presión.',
 }
 
-export const habilidades = [
-  { nombre: 'AutoCAD', nivel: 95, categoria: 'software' },
-  { nombre: 'Documentación Técnica', nivel: 90, categoria: 'tecnica' },
-  { nombre: 'Lectura de Planos', nivel: 92, categoria: 'tecnica' },
-  { nombre: 'Mediciones y Presupuestos', nivel: 85, categoria: 'tecnica' },
-  { nombre: 'Excel (nivel avanzado)', nivel: 82, categoria: 'software' },
-  { nombre: 'Despieces y Modulaciones', nivel: 88, categoria: 'tecnica' },
-  { nombre: 'Cuantificación de Materiales', nivel: 87, categoria: 'tecnica' },
-  { nombre: 'Presto', nivel: 65, categoria: 'software' },
+// Herramientas agrupadas como en el CV (sin porcentajes inventados)
+export const herramientas = [
+  {
+    grupo: 'Diseño e ingeniería',
+    items: ['AutoCAD', 'Autodesk Civil 3D', 'Robot Structural', 'RAM Elements', 'EPANET', 'FlowMaster', 'QGIS (básico)', 'Mathcad'],
+  },
+  {
+    grupo: 'Gestión documental y datos',
+    items: ['Excel avanzado', 'Power BI (en formación)', 'MS Project', 'SharePoint', 'Teams', 'Outlook'],
+  },
+  {
+    grupo: 'Sistemas de gestión',
+    items: ['ISO 9001', 'ISO 14001'],
+  },
 ]
 
+// `plano` elige el dibujo técnico de la tarjeta (ver Projects.jsx)
 export const proyectos = [
   {
     id: 1,
-    titulo: 'Planos Hidráulicos',
-    subtitulo: 'Redes de agua y saneamiento',
+    titulo: 'Catastro de obras hidráulicas',
+    subtitulo: 'Ciudad de Buenos Aires · Soluciones Químicas S.A.',
+    periodo: '2025 — actualidad',
     descripcion:
-      'Elaboración y modificación de planos de instalaciones hidráulicas en AutoCAD: redes de distribución de agua potable, desagüe cloacal y pluvial. Coordinación con equipos de obra para detección de incompatibilidades antes del inicio.',
-    tags: ['AutoCAD', 'Hidráulica', 'Instalaciones', 'Documentación'],
+      'Actualización catastral de obras hidráulicas de CABA en CAD. Elaboración, control y actualización de planos a partir de relevamientos topográficos y documentación existente, asegurando orden y trazabilidad entre área técnica y obra.',
+    tags: ['AutoCAD', 'Catastro', 'Relevamiento topográfico', 'Trazabilidad'],
+    plano: 'catastro',
     destacado: true,
   },
   {
     id: 2,
-    titulo: 'Proyectos de Pavimentos',
-    subtitulo: 'Vías urbanas e infraestructura vial',
+    titulo: 'Redes de desagüe pluvial',
+    subtitulo: 'Municipalidad de La Matanza · Dirección de Hidráulica',
+    periodo: '2022 — 2025',
     descripcion:
-      'Generación de planos de trazado y perfiles de pavimento. Elaboración de libros de montaje, despieces y modulaciones. Cuantificación de materiales y generación de listados para compras y taller.',
-    tags: ['AutoCAD', 'Vialidad', 'Cuantificación', 'Mediciones'],
+      'Diseño y cálculo de redes de desagüe pluvial para obra pública. Elaboración de memorias de cálculo, informes técnicos y planos generales y de detalle.',
+    tags: ['Hidráulica', 'Cálculo', 'Memorias', 'Planos de detalle'],
+    plano: 'pluvial',
     destacado: true,
   },
   {
     id: 3,
-    titulo: 'Documentación de Fachadas',
-    subtitulo: 'Sistemas SATE y fachadas ventiladas',
+    titulo: 'Pavimentos y dirección de obra',
+    subtitulo: 'Municipalidad de La Matanza · Dirección de Pavimentos',
+    periodo: '2022 — 2025',
     descripcion:
-      'Preparación de documentación técnica para sistemas de fachadas ventiladas. Lectura e interpretación de planos arquitectónicos y constructivos para la generación de despieces de materiales HPL, aluminio y fibrocemento.',
-    tags: ['AutoCAD', 'SATE', 'Fachadas Ventiladas', 'HPL', 'Aluminio'],
-    destacado: true,
+      'Planialtimetrías y planos de replanteo para obras de pavimento. Gestión de certificaciones, seguimiento de partes diarios y avance, inspecciones y visitas técnicas a obra.',
+    tags: ['Planialtimetría', 'Replanteo', 'Certificaciones', 'Inspección'],
+    plano: 'pavimento',
   },
   {
     id: 4,
-    titulo: 'Proyectos Estructurales',
-    subtitulo: 'Estructuras de hormigón y acero',
+    titulo: 'Instalaciones contra incendio',
+    subtitulo: 'Obras industriales · Damianich & Sons',
+    periodo: '2022',
     descripcion:
-      'Colaboración en la elaboración de documentación técnica para proyectos estructurales: armaduras, encofrados y detalles constructivos. Revisión de planos y detección de interferencias previo al inicio de obra.',
-    tags: ['AutoCAD', 'Estructuras', 'Armaduras', 'Detalles Constructivos'],
-    destacado: false,
+      'Cálculo y diseño de instalaciones de incendio para plantas industriales. Memorias de cálculo, planos generales, vistas axonométricas y detalles constructivos, con relevamiento y asesoramiento al cliente.',
+    tags: ['Incendio', 'Axonometrías', 'Detalles constructivos', 'Relevamiento'],
+    plano: 'incendio',
+  },
+  {
+    id: 5,
+    titulo: 'Instalaciones y evacuación en edificios públicos',
+    subtitulo: 'Ministerio de Agricultura, Ganadería y Pesca',
+    periodo: '2019 — 2021',
+    descripcion:
+      'Planos estructurales y de instalaciones sanitarias, eléctricas, de incendio y gas. Análisis de evacuación de incendio con su documentación técnica, relevamientos y seguimiento de obras.',
+    tags: ['Instalaciones', 'Evacuación', 'Estructuras', 'Informes'],
+    plano: 'evacuacion',
   },
 ]
 
 export const experiencia = [
   {
-    empresa: 'Proyecto Independiente / Consultoría Técnica',
-    cargo: 'Delineante Técnica — AutoCAD',
-    periodo: '2023 — Presente',
-    descripcion:
-      'Elaboración de planos técnicos para proyectos hidráulicos, de pavimentos y estructuras. Documentación técnica completa, coordinación con equipos de obra y generación de listados de materiales.',
+    empresa: 'Soluciones Químicas S.A.',
+    cargo: 'Analista de CAD',
+    periodo: 'May 2025 — Actual',
+    descripcion: 'Servicios de Ingeniería Hidráulica.',
     logros: [
-      'Reducción de incompatibilidades en obra mediante revisión sistemática de planos',
-      'Estandarización de planillas de cuantificación de materiales',
-      'Gestión autónoma de documentación técnica de múltiples proyectos simultáneos',
+      'Actualización catastral de obras hidráulicas de la Ciudad de Buenos Aires mediante documentación técnica en CAD',
+      'Elaboración, control y actualización de planos técnicos a partir de relevamientos topográficos y documentación existente',
+      'Generación y organización de documentación de apoyo e informes técnicos',
+      'Nexo entre el área técnica y obra, asegurando el orden y la trazabilidad de la información',
     ],
   },
   {
-    empresa: 'Formación Académica',
-    cargo: 'Ingeniería Civil',
-    periodo: '2018 — 2023',
-    descripcion:
-      'Desarrollo de competencias en diseño estructural, hidráulica, vialidad y gestión de obras. Aplicación práctica de AutoCAD en proyectos académicos de diversa escala.',
+    empresa: 'Municipalidad de La Matanza',
+    cargo: 'Proyecto y Dirección de Obras Públicas',
+    periodo: 'Sep 2022 — Abr 2025',
+    descripcion: 'Dirección de Hidráulica, Dirección de Pavimentos y tareas generales de obra.',
     logros: [
-      'Dominio de AutoCAD aplicado a proyectos de ingeniería civil',
-      'Formación en mediciones, presupuestos y planificación de obras',
-      'Desarrollo de habilidades de interpretación de planos y detalles constructivos',
+      'Hidráulica: diseño y cálculo de redes de desagüe pluvial',
+      'Hidráulica: memorias de cálculo, informes técnicos y planos generales y de detalle',
+      'Pavimentos: planialtimetrías y planos de replanteo',
+      'Gestión de certificaciones y documentación de obra',
+      'Seguimiento de partes diarios, avances, inspecciones y visitas técnicas',
     ],
   },
+  {
+    empresa: 'Damianich & Sons',
+    cargo: 'Proyectista',
+    periodo: 'Ene 2022 — Ago 2022',
+    descripcion: 'Área de Ingeniería.',
+    logros: [
+      'Cálculo y diseño de instalaciones de incendio para obras industriales',
+      'Memorias de cálculo y documentación técnica',
+      'Planos generales, vistas axonométricas y detalles constructivos',
+      'Relevamientos técnicos y asesoramiento a clientes',
+    ],
+  },
+  {
+    empresa: 'Ministerio de Agricultura, Ganadería y Pesca',
+    cargo: 'Asistente Técnica',
+    periodo: 'Ago 2019 — Dic 2021',
+    descripcion: 'Dirección Técnica Operativa.',
+    logros: [
+      'Planos estructurales y de instalaciones sanitarias, eléctricas, de incendio y gas',
+      'Análisis de evacuación de incendio y documentación técnica asociada',
+      'Relevamiento de estructuras e instalaciones',
+      'Redacción de informes, planes de trabajo y seguimiento de obras',
+    ],
+  },
+]
+
+export const formacion = {
+  titulo: 'Ingeniería Civil',
+  institucion: 'Universidad Nacional de La Matanza',
+  periodo: '2016 — 2025',
+  promedio: '7,90',
+}
+
+export const datos = [
+  { l: 'Inglés', v: 'B2 · Upper Intermediate' },
+  { l: 'Licencia de conducir', v: 'B1' },
+  { l: 'Disponibilidad para viajar', v: 'Sí' },
 ]
 
 export const competencias = [
   {
     icono: '⊡',
-    titulo: 'AutoCAD Avanzado',
+    titulo: 'Documentación técnica en CAD',
     descripcion:
-      'Elaboración y modificación de planos para proyectos hidráulicos, viales, de fachadas y estructurales.',
+      'Planos generales, de detalle, de replanteo y catastrales en AutoCAD y Civil 3D, controlados y actualizados a partir de relevamientos.',
   },
   {
     icono: '◫',
-    titulo: 'Documentación Técnica',
+    titulo: 'Gestión documental',
     descripcion:
-      'Generación y mantenimiento actualizado de toda la documentación técnica de obra: planos, libros de montaje y especificaciones.',
+      'Orden, versionado y trazabilidad de planos, memorias e informes en SharePoint y Teams, con criterios de ISO 9001 e ISO 14001.',
   },
   {
     icono: '◱',
-    titulo: 'Medición y Cuantificación',
+    titulo: 'Cálculo hidráulico',
     descripcion:
-      'Realización de mediciones, despieces, modulaciones y cuantificación de materiales para compras y producción.',
+      'Diseño y cálculo de redes de desagüe pluvial y memorias de cálculo, con EPANET y FlowMaster.',
   },
   {
     icono: '◲',
-    titulo: 'Revisión de Incompatibilidades',
+    titulo: 'Instalaciones',
     descripcion:
-      'Detección y reporte de incompatibilidades en planos antes del inicio de obra, evitando sobrecostos y retrasos.',
+      'Proyecto de instalaciones contra incendio, sanitarias, eléctricas y de gas, y análisis de evacuación.',
   },
   {
     icono: '◳',
-    titulo: 'Apoyo a Producción',
+    titulo: 'Seguimiento de obra',
     descripcion:
-      'Soporte técnico a equipos de montaje y producción mediante generación de listados de materiales y despieces detallados.',
+      'Certificaciones, partes diarios, control de avance, inspecciones y visitas técnicas en obra pública.',
   },
   {
     icono: '◰',
-    titulo: 'Organización & Autonomía',
+    titulo: 'Nexo entre áreas',
     descripcion:
-      'Gestión independiente de múltiples proyectos con atención al detalle y capacidad de adaptación a distintos rubros.',
+      'Coordinación de la información entre oficina técnica, obra y clientes, con comunicación clara y bajo presión.',
   },
+]
+
+export const habilidadesBlandas = [
+  'Organización y atención al detalle',
+  'Gestión del tiempo y prioridades',
+  'Comunicación clara y asertiva',
+  'Proactividad',
+  'Orientación al servicio',
+  'Negociación y manejo de conflictos',
 ]
 
 export const marqueeItems = [
   'AutoCAD',
-  'Fachadas Ventiladas',
-  'Documentación Técnica',
-  'Hidráulica',
-  'SATE',
-  'Pavimentos',
-  'Despieces',
-  'Modulaciones',
-  'Cuantificación',
-  'Estructuras',
-  'HPL',
-  'Fibrocemento',
-  'Aluminio',
-  'Presto',
-  'Excel',
+  'Civil 3D',
+  'Gestión documental',
+  'Desagües pluviales',
+  'Catastro hidráulico',
+  'Memorias de cálculo',
+  'Planialtimetrías',
+  'Replanteo',
+  'Instalaciones contra incendio',
+  'EPANET',
+  'FlowMaster',
+  'Robot Structural',
+  'SharePoint',
+  'ISO 9001',
+  'Excel avanzado',
 ]

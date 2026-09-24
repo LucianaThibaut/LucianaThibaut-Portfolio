@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { experiencia } from '../data/portfolio'
+import { experiencia, formacion } from '../data/portfolio'
 
 function useReveal(threshold = 0.1) {
   const ref = useRef(null)
@@ -109,10 +109,11 @@ export default function Experience() {
   const [ref, vis] = useReveal(0.08)
 
   const tools = [
-    { name: 'AutoCAD',              tag: 'Avanzado — Obligatorio ✓' },
-    { name: 'Microsoft Excel',      tag: 'Nivel usuario avanzado' },
-    { name: 'Documentación técnica', tag: 'Gestión completa' },
-    { name: 'Presto',               tag: 'Conocimientos básicos' },
+    { name: 'AutoCAD · Civil 3D',   tag: 'Planos, catastro y replanteo' },
+    { name: 'EPANET · FlowMaster',  tag: 'Cálculo hidráulico' },
+    { name: 'Robot · RAM Elements', tag: 'Cálculo estructural' },
+    { name: 'Excel avanzado',       tag: 'Tablas dinámicas, macros/VBA' },
+    { name: 'SharePoint · Teams',   tag: 'Gestión documental' },
   ]
 
   return (
@@ -184,8 +185,8 @@ export default function Experience() {
               transition: 'opacity 0.7s 0.3s, transform 0.7s 0.3s',
             }}>
               <p style={{ fontSize: 9, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: 8 }}>Formación</p>
-              <p style={{ fontSize: 15, fontWeight: 700, color: 'var(--ink)', marginBottom: 2 }}>Ingeniería Civil</p>
-              <p style={{ fontSize: 11, color: 'var(--muted)' }}>Universidad · Argentina · 2018 – 2023</p>
+              <p style={{ fontSize: 15, fontWeight: 700, color: 'var(--ink)', marginBottom: 2 }}>{formacion.titulo}</p>
+              <p style={{ fontSize: 11, color: 'var(--muted)' }}>{formacion.institucion} · {formacion.periodo} · Promedio {formacion.promedio}</p>
             </div>
           </div>
 

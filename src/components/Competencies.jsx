@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { competencias } from '../data/portfolio'
+import { competencias, habilidadesBlandas } from '../data/portfolio'
 
 function useReveal(threshold = 0.12) {
   const ref = useRef(null)
@@ -110,10 +110,10 @@ export default function Competencies() {
           opacity: vis ? 1 : 0,
           transition: 'opacity 0.7s 0.5s',
         }}>
-          <span style={{ fontSize: 9, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--green)', fontWeight: 700 }}>✦ Alineación vacante</span>
+          <span style={{ fontSize: 9, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--green)', fontWeight: 700 }}>Forma de trabajo</span>
           <div style={{ width: 1, height: 16, background: 'var(--border)' }} />
           <p style={{ fontSize: 11, color: 'var(--muted)', lineHeight: 1.6 }}>
-            Planos constructivos · Fachadas ventiladas · SATE · Mediciones y despieces · Documentación técnica · Autonomía · Materiales HPL / Aluminio / GRC
+            {habilidadesBlandas.join(' · ')}
           </p>
         </div>
       </div>

@@ -74,8 +74,12 @@ export default function Contact() {
     setTimeout(() => setCopied(false), 2200)
   }
 
+  // Sin backend: arma el mail en el cliente de correo de quien escribe
   const handleSubmit = e => {
     e.preventDefault()
+    const subject = encodeURIComponent(`Contacto desde el portfolio — ${form.name}`)
+    const body = encodeURIComponent(`${form.message}\n\n${form.name}\n${form.email}`)
+    window.location.href = `mailto:${personal.email}?subject=${subject}&body=${body}`
     setSubmitted(true)
   }
 
@@ -113,7 +117,7 @@ export default function Contact() {
               transform: vis ? 'none' : 'translateY(20px)',
               transition: 'opacity 0.7s 0.1s, transform 0.7s 0.1s',
             }}>
-              Disponible para incorporación inmediata. Listos para conversar sobre cómo puedo aportar a tu equipo de oficina técnica.
+              Si tu equipo necesita ordenar, producir o controlar documentación técnica de proyectos de ingeniería, escribime. Tengo disponibilidad para viajar.
             </p>
 
             {/* Contact options */}
@@ -148,8 +152,7 @@ export default function Contact() {
 
               {/* LinkedIn */}
               <a
-                href={`https://${personal.linkedin}`}
-                target="_blank" rel="noopener noreferrer"
+                href={personal.telefonoHref}
                 style={{
                   display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                   background: 'rgba(247,244,239,0.04)',
@@ -161,10 +164,10 @@ export default function Contact() {
                 onMouseLeave={e => e.currentTarget.style.background = 'rgba(247,244,239,0.04)'}
               >
                 <div>
-                  <p style={{ fontSize: 9, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(247,244,239,0.3)', marginBottom: 4 }}>LinkedIn</p>
-                  <p style={{ fontSize: 13, fontWeight: 600, color: 'var(--paper)' }}>{personal.linkedin}</p>
+                  <p style={{ fontSize: 9, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(247,244,239,0.3)', marginBottom: 4 }}>Teléfono</p>
+                  <p style={{ fontSize: 13, fontWeight: 600, color: 'var(--paper)' }}>{personal.telefono}</p>
                 </div>
-                <span style={{ fontSize: 13, color: 'rgba(247,244,239,0.3)' }}>↗</span>
+                <span style={{ fontSize: 13, color: 'rgba(247,244,239,0.3)' }}>☏</span>
               </a>
 
               {/* Location */}
@@ -196,8 +199,8 @@ export default function Contact() {
                 alignItems: 'center', justifyContent: 'center', gap: 16, textAlign: 'center',
               }}>
                 <div style={{ fontSize: 40, color: 'var(--sand)', lineHeight: 1 }}>✓</div>
-                <h3 style={{ fontSize: 20, fontWeight: 700, color: 'var(--paper)' }}>¡Mensaje enviado!</h3>
-                <p style={{ fontSize: 13, color: 'rgba(247,244,239,0.5)' }}>Luciana te responderá a la brevedad.</p>
+                <h3 style={{ fontSize: 20, fontWeight: 700, color: 'var(--paper)' }}>Se abrió tu correo</h3>
+                <p style={{ fontSize: 13, color: 'rgba(247,244,239,0.5)' }}>Revisá el mensaje y envialo desde ahí. Si no se abrió, escribí a {personal.email}.</p>
                 <button
                   onClick={() => { setSubmitted(false); setForm({ name: '', email: '', message: '' }) }}
                   style={{

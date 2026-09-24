@@ -82,7 +82,7 @@ export default function Hero() {
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <div style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--green)', animation: 'pulse 2s infinite' }} />
           <span style={{ fontSize: 10, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--muted)' }}>
-            Buenos Aires, ARG
+            Ituzaingó, Buenos Aires
           </span>
         </div>
         <span style={{ fontSize: 10, letterSpacing: '0.1em', color: 'var(--muted)', fontFamily: "'JetBrains Mono', monospace" }}>
@@ -107,7 +107,7 @@ export default function Hero() {
           <div style={{ ...tr(0), display: 'flex', alignItems: 'center', gap: 12 }}>
             <div style={{ width: 32, height: 1, background: 'var(--green)' }} />
             <span style={{ fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--green)', fontWeight: 600 }}>
-              Ingeniería Civil · Oficina Técnica
+              Ingeniería Civil · Gestión Documental
             </span>
           </div>
 
@@ -133,13 +133,14 @@ export default function Hero() {
             color: 'var(--muted)',
             maxWidth: 480,
           }}>
-            Especialista en documentación técnica, elaboración de planos en AutoCAD
-            y preparación de obras para proyectos de construcción e infraestructura.
+            Elaboro, controlo y administro la documentación técnica de proyectos
+            de ingeniería: planos, memorias de cálculo e informes que conectan
+            la oficina técnica con la obra.
           </p>
 
           {/* Keyword chips */}
           <div style={{ ...tr(240), display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-            {['AutoCAD', 'Ofic. Técnica', 'Fachadas SATE', 'Hidráulica', 'Pavimentos'].map(k => (
+            {['AutoCAD', 'Civil 3D', 'Hidráulica', 'Pavimentos', 'ISO 9001'].map(k => (
               <span key={k} style={{
                 border: '1px solid var(--border)',
                 padding: '5px 12px',
@@ -248,7 +249,7 @@ export default function Hero() {
               boxShadow: '0 4px 24px rgba(13,13,13,0.08)',
             }}>
               <p style={{ fontSize: 9, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: 2 }}>Experiencia</p>
-              <p style={{ fontSize: 18, fontWeight: 800, color: 'var(--ink)', lineHeight: 1 }}>3+ años</p>
+              <p style={{ fontSize: 18, fontWeight: 800, color: 'var(--ink)', lineHeight: 1 }}>4+ años</p>
             </div>
 
             <div style={{
@@ -257,8 +258,8 @@ export default function Hero() {
               padding: '10px 14px',
               boxShadow: '0 4px 24px rgba(13,13,13,0.15)',
             }}>
-              <p style={{ fontSize: 9, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(247,244,239,0.5)', marginBottom: 2 }}>Proyectos</p>
-              <p style={{ fontSize: 18, fontWeight: 800, color: 'var(--paper)', lineHeight: 1 }}>15+</p>
+              <p style={{ fontSize: 9, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(247,244,239,0.5)', marginBottom: 2 }}>Actualmente</p>
+              <p style={{ fontSize: 14, fontWeight: 700, color: 'var(--paper)', lineHeight: 1.2 }}>Analista de CAD</p>
             </div>
           </div>
         </div>
