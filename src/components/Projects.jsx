@@ -8,7 +8,7 @@ import { proyectos } from '../data/portfolio'
 
 const pad = n => String(n).padStart(2, '0')
 
-function ProjectCase({ proyecto }) {
+function ProjectCase({ proyecto, index }) {
   const [active, setActive] = useState(0)
   const [viewer, setViewer] = useState(false)
   const [ref, visible] = useReveal(0.1)
@@ -33,6 +33,7 @@ function ProjectCase({ proyecto }) {
     <article ref={ref} className={`case ${revealClass(visible)}`} aria-labelledby={`${baseId}-title`}>
       <header className="case-head">
         <DraftFrame className="case-frame">
+          <p className="spread-num">Proyecto {pad(index + 1)}</p>
           <h3 id={`${baseId}-title`} className="spread-title">{proyecto.titulo}</h3>
         </DraftFrame>
 
@@ -119,7 +120,7 @@ export default function Projects() {
           title="Planos desarrollados."
           intro="Láminas reales de proyecto. Cada plano se puede ampliar para ver cotas, armaduras y detalles."
         />
-        {proyectos.map(p => <ProjectCase key={p.id} proyecto={p} />)}
+        {proyectos.map((p, i) => <ProjectCase key={p.id} proyecto={p} index={i} />)}
       </div>
     </section>
   )
