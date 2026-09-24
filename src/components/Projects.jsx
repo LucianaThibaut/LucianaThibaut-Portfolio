@@ -105,9 +105,6 @@ function ProjectCase({ proyecto, index }) {
             </p>
             <h4 className="sheet-title">{agrupado ? hoja.titulo : grupo.titulo}</h4>
             <p className="sheet-desc">{grupo.descripcion}</p>
-            <ul className="chips">
-              {grupo.specs.map(s => <li key={s} className="chip">{s}</li>)}
-            </ul>
           </div>
           <div className="sheet-actions">
             <button type="button" className="btn btn-primary" onClick={() => setViewer(true)}>
@@ -175,8 +172,7 @@ export default function Projects() {
           id="proyectos-title"
           num="02"
           kicker="Proyectos"
-          title="Planos desarrollados."
-          intro="Láminas reales de proyecto. Cada plano se puede ampliar para ver cotas, armaduras y detalles."
+          title="Mis proyectos."
         />
         {proyectos.map((p, i) => <ProjectCase key={p.id} proyecto={p} index={i} />)}
       </div>

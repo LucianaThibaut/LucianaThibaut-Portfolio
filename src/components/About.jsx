@@ -23,7 +23,7 @@ export default function About() {
           id="perfil-title"
           num="01"
           kicker="Perfil profesional"
-          title="Orden y precisión en cada documento de obra."
+          title="Sobre mí."
         />
 
         <div className="about-grid">

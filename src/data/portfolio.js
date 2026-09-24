@@ -35,12 +35,11 @@ export const herramientas = [
 export const proyectos = [
   {
     id: 'planta-industrial',
-    titulo: 'Proyecto de planta industrial',
+    titulo: 'Nave industrial',
     resumen:
-      'Tres planos de un mismo sector: el movimiento de suelo que define niveles y pendientes, las vigas de hormigón armado sobre las que circulan las grúas RTG y las fundaciones de las torres de iluminación, coordinadas con los pavimentos y las vigas.',
+      'Tres planos de un mismo sector: el movimiento de suelo que define niveles y pendientes, las vigas de hormigón armado sobre las que circulan las grúas RTG y las fundaciones de las torres de iluminación.',
     meta: [
       { l: 'Rol', v: 'Desarrollo de planos' },
-      { l: 'Año', v: '2026' },
       { l: 'Materiales', v: 'Hormigón H-30 · Acero ADN420', full: true },
     ],
     laminas: [
@@ -88,11 +87,6 @@ export const proyectos = [
       {
         l: 'Año',
         v: '2020'
-      },
-      {
-        l: 'Alcance',
-        v: 'Arquitectura, estructura e instalaciones',
-        full: true
       }
     ],
     grupos: [
@@ -394,11 +388,6 @@ export const proyectos = [
       {
         l: 'Ubicación',
         v: 'San Justo, La Matanza'
-      },
-      {
-        l: 'Alcance',
-        v: 'Canaletas pluviales y pavimento de hormigón',
-        full: true
       }
     ],
     laminas: [
@@ -482,7 +471,6 @@ export const proyectos = [
       { l: 'Comitente', v: 'Municipio de La Matanza' },
       { l: 'Período', v: '2023 — 2024' },
       { l: 'Ubicación', v: 'Isidro Casanova, La Matanza' },
-      { l: 'Alcance', v: 'Planialtimetría, rasante, desagües y umbrales', full: true },
     ],
     laminas: [
       {
@@ -547,7 +535,6 @@ export const proyectos = [
       { l: 'Comitente', v: 'Soluciones Químicas S.A. · CABA' },
       { l: 'Período', v: '2025 — 2026' },
       { l: 'Ubicación', v: 'Ciudad Autónoma de Buenos Aires' },
-      { l: 'Alcance', v: 'Catastro pluvial en CAD, sumideros, cámaras y conductos', full: true },
     ],
     laminas: [
       {
