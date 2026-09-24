@@ -528,9 +528,9 @@ export const proyectos = [
     laminas: [
       {
         id: '01-zona-catastro',
-        titulo: 'Zona catastro',
+        titulo: 'Área relevada',
         descripcion:
-          'Plano macro de delimitación territorial y zonificación operativa para la actualización catastral de obras hidráulicas en la Ciudad Autónoma de Buenos Aires, con subdivisión por sectores (I a V) sobre la trama urbana de la Ciudad.',
+          'Plano macro de delimitación territorial y zonificación operativa para la actualización catastral de obras hidráulicas en la Ciudad Autónoma de Buenos Aires.',
         specs: [
           'Zonificación macro CABA',
           'Sectores I a V',
@@ -544,9 +544,9 @@ export const proyectos = [
       },
       {
         id: '02-sector-1',
-        titulo: 'Sector 1',
+        titulo: 'Área actualizada',
         descripcion:
-          'Plano catastral del Sector 1 sobre el tejido urbano de CABA. Relevamiento integral de la red de conductos pluviales, sumideros y bocas de registro, con tablas de atributos técnicos vinculadas: tipología, profundidad, material y diámetro de nexos, y cotas de tapada inicial y final.',
+          'Relevamiento integral de la red de conductos pluviales, sumideros, bocas de registro, cámaras de inspección y rejas perimetrales, con tablas de atributos vinculadas como: tipología, profundidad, material y diámetro de nexos, y cotas de tapada inicial y final, etc.',
         specs: [
           'Red pluvial Sector 1',
           'Planilla técnica de sumideros',
@@ -560,9 +560,9 @@ export const proyectos = [
       },
       {
         id: '03-catastro-ejemplo',
-        titulo: 'Catastro ejemplo',
+        titulo: 'Detalle ampliado',
         descripcion:
-          'Detalle de relevamiento catastral a escala de sector urbano (entorno Barrio Rodrigo Bueno). Traza de conductos principales de PEAD (Ø450 a Ø900 mm), nexos de sumideros, cámaras de inspección, cotas de tapada, progresivas de tramo y profundidades de instalación.',
+          'Detalle de relevamiento catastral a escala de sector urbano (entorno Barrio Rodrigo Bueno).',
         specs: [
           'Conductos PEAD Ø450 a Ø900',
           'Cámaras de inspección y nexos',
