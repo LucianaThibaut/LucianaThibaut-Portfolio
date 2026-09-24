@@ -17,15 +17,11 @@ export const personal = {
 export const herramientas = [
   {
     grupo: 'Diseño e ingeniería',
-    items: ['AutoCAD', 'Autodesk Civil 3D', 'Robot Structural', 'RAM Elements', 'EPANET', 'FlowMaster', 'QGIS (básico)', 'Mathcad'],
+    items: ['AutoCAD', 'Autodesk Civil 3D', 'Robot Structural', 'EPANET', 'FlowMaster', 'QGIS (básico)', 'Mathcad'],
   },
   {
     grupo: 'Gestión documental y datos',
     items: ['Excel avanzado', 'Power BI (en formación)', 'MS Project', 'SharePoint', 'Teams', 'Outlook'],
-  },
-  {
-    grupo: 'Sistemas de gestión',
-    items: ['ISO 9001', 'ISO 14001'],
   },
 ]
 
@@ -40,7 +36,6 @@ export const proyectos = [
       'Tres planos de un mismo sector: el movimiento de suelo que define niveles y pendientes, las vigas de hormigón armado sobre las que circulan las grúas RTG y las fundaciones de las torres de iluminación.',
     meta: [
       { l: 'Rol', v: 'Desarrollo de planos' },
-      { l: 'Materiales', v: 'Hormigón H-30 · Acero ADN420', full: true },
     ],
     laminas: [
       {
@@ -385,67 +380,22 @@ export const proyectos = [
       {
         id: '01-canaleta-villegas',
         titulo: 'Canaleta T. J. Villegas',
-        descripcion: 'Planialtimetría de la canaleta sobre T. J. Villegas, entre Dr. I. Arieta y Almafuerte. Traza en planta del conducto proyectado de Ø600 mm con sus sumideros y cámaras de enlace, y perfil longitudinal con cotas de terreno, extradós y fondo de caño, tapadas y pendiente.',
-        specs: [
-          'Conducto Ø600 mm',
-          'Pendiente 2 ‰',
-          'Esc. H 1:500 · V 1:50'
-        ],
         img: '/planos/peatonal/01-canaleta-villegas.webp',
         full: '/planos/peatonal/01-canaleta-villegas-full.webp',
         w: 2000,
         h: 1178
       },
       {
-        id: '02-canaleta-irigoyen-600',
-        titulo: 'Canaleta Irigoyen',
-        descripcion: 'Planialtimetría de la canaleta sobre Irigoyen, del lado de la plaza, con conducto proyectado de Ø600 mm, sumideros y cámaras de enlace. Perfil longitudinal con progresivas, cotas de pavimento y de fondo de caño, tapadas y pendientes.',
-        specs: [
-          'Conducto Ø600 mm',
-          'Pendiente 2 ‰',
-          'Progresivas y tapadas'
-        ],
-        img: '/planos/peatonal/02-canaleta-irigoyen-600.webp',
-        full: '/planos/peatonal/02-canaleta-irigoyen-600-full.webp',
-        w: 2000,
-        h: 1250
-      },
-      {
         id: '03-canaleta-irigoyen-600-500',
-        titulo: 'Canaleta Irigoyen · variante',
-        descripcion: 'Variante de la canaleta sobre Irigoyen en la que los últimos tramos se resuelven con conducto de Ø500 mm. Planta con la traza y los sumideros a desplazar, y perfil longitudinal con cotas, tapadas y pendientes.',
-        specs: [
-          'Conductos Ø600 y Ø500 mm',
-          'Pendiente 2 ‰'
-        ],
+        titulo: 'Canaleta Irigoyen',
         img: '/planos/peatonal/03-canaleta-irigoyen-600-500.webp',
         full: '/planos/peatonal/03-canaleta-irigoyen-600-500-full.webp',
         w: 2000,
         h: 1250
       },
       {
-        id: '04-canaleta-irigoyen-traza',
-        titulo: 'Canaleta Irigoyen · traza alternativa',
-        descripcion: 'Planialtimetría de la canaleta sobre Irigoyen con conducto de Ø600 mm hasta Almafuerte y continuación en Ø500 mm por el cruce. Planta de la traza y perfil longitudinal con progresivas, cotas y tapadas.',
-        specs: [
-          'Conductos Ø600 y Ø500 mm',
-          'Pendiente 2 ‰'
-        ],
-        img: '/planos/peatonal/04-canaleta-irigoyen-traza.webp',
-        full: '/planos/peatonal/04-canaleta-irigoyen-traza-full.webp',
-        w: 2000,
-        h: 1250
-      },
-      {
         id: '05-perfil-tipo-pavimento',
         titulo: 'Perfil tipo del pavimento',
-        descripcion: 'Perfil tipo del pavimento de hormigón simple H30 de 11,00 m de ancho, construido sobre la base de adoquines existentes, con sub-base de suelo seleccionado de 0,20 m y canaletas laterales de 0,60 m de ancho.',
-        specs: [
-          'Hormigón simple H30',
-          'Malla Q524',
-          'Ancho 11,00 m',
-          'Canaletas de 0,60 m'
-        ],
         img: '/planos/peatonal/05-perfil-tipo-pavimento.webp',
         full: '/planos/peatonal/05-perfil-tipo-pavimento-full.webp',
         w: 1802,

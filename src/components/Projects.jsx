@@ -68,7 +68,7 @@ function ProjectCase({ proyecto, index }) {
 
       {/* Pestañas: especialidades o láminas */}
       <div
-        className={`case-tabs${grupos.length > 4 ? ' is-many' : ''}`}
+        className={`case-tabs${agrupado ? ' is-groups' : grupos.length > 4 ? ' is-many' : ''}`}
         role="tablist"
         aria-label={agrupado ? 'Especialidades del proyecto' : 'Láminas del proyecto'}
         onKeyDown={onTabKey}
@@ -88,7 +88,9 @@ function ProjectCase({ proyecto, index }) {
             <span className="case-tab-num">{pad(gi + 1)}</span>
             <span className="case-tab-name">
               {g.titulo}
-              {agrupado && <small>{g.laminas.length} {g.laminas.length === 1 ? 'lámina' : 'láminas'}</small>}
+              {agrupado && (
+                <small aria-label={`${g.laminas.length} ${g.laminas.length === 1 ? 'lámina' : 'láminas'}`}>{g.laminas.length}</small>
+              )}
             </span>
           </button>
         ))}
