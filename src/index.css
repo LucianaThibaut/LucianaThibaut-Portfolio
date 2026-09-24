@@ -178,3 +178,118 @@ body {
 
 /* ─── Selection ─────────────────────────────── */
 ::selection { background: var(--green); color: var(--paper); }
+
+/* ─── Hero: lámina con foto a sangre ─────────── */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 42vw);
+  min-height: 100vh;
+  background: var(--paper);
+  border-bottom: 1px solid var(--border);
+}
+.hero-left {
+  position: relative;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 120px clamp(24px, 5vw, 72px) 72px max(40px, calc((100vw - 1280px) / 2 + 40px));
+}
+.hero-meta {
+  position: absolute; top: 84px;
+  left: max(40px, calc((100vw - 1280px) / 2 + 40px));
+  right: clamp(24px, 5vw, 72px);
+  display: flex; justify-content: space-between;
+  font-size: 12px; color: var(--muted);
+  z-index: 1;
+}
+.hero-facts {
+  display: grid; grid-template-columns: repeat(3, auto);
+  justify-content: start; gap: 0;
+  border-top: 1px solid var(--border);
+}
+.hero-facts > div { padding: 14px 32px 0 0; margin-right: 32px; border-right: 1px solid var(--border); }
+.hero-facts > div:last-child { border-right: 0; margin-right: 0; }
+.hero-facts dt { font-size: 12px; color: var(--muted); margin-bottom: 2px; }
+.hero-facts dd { font-size: 15px; font-weight: 600; color: var(--ink); }
+
+.hero-photo { position: relative; margin: 0; overflow: hidden; background: var(--border); }
+.hero-photo img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: 50% 30%;
+  filter: grayscale(100%) contrast(1.05);
+  transition: filter 0.8s ease;
+}
+.hero-photo:hover img { filter: grayscale(0%); }
+.hero-photo figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  display: flex; justify-content: space-between;
+  padding: 16px 24px;
+  font-size: 12px; color: var(--paper);
+  background: linear-gradient(transparent, rgba(13,13,13,0.55));
+}
+
+/* ─── Botones ───────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center;
+  padding: 13px 28px;
+  font-size: 13px; font-weight: 600;
+  text-decoration: none;
+  border: 1.5px solid var(--ink);
+  transition: background 0.25s, color 0.25s;
+}
+.btn-solid { background: var(--ink); color: var(--paper); }
+.btn-solid:hover { background: var(--green); border-color: var(--green); }
+.btn-line { color: var(--ink); }
+.btn-line:hover { background: var(--ink); color: var(--paper); }
+
+/* ─── Proyectos: doble página ───────────────── */
+.spread {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+  padding: 56px 0;
+  border-top: 1px solid var(--border);
+}
+.spread:first-of-type { border-top: 0; padding-top: 0; }
+.spread.flip .spread-media { order: 2; }
+.spread-media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #0D0D0D;
+  overflow: hidden;
+}
+.spread-media svg { display: block; }
+.spread-meta {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 16px 24px;
+  margin-top: 24px; padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.spread-meta dt { font-size: 12px; color: var(--muted); margin-bottom: 2px; }
+.spread-meta dd { font-size: 14px; color: var(--ink); font-weight: 500; line-height: 1.45; }
+
+/* ─── Utilidades de navegación ──────────────── */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.hidden-mobile { display: flex !important; }
+.show-mobile   { display: none  !important; }
+@media (max-width: 768px) {
+  .hidden-mobile { display: none  !important; }
+  .show-mobile   { display: flex  !important; }
+}
+
+/* ─── Responsive ────────────────────────────── */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-left { padding: 80px 24px 56px; }
+  .hero-meta { left: 24px; right: 24px; top: 28px; }
+  .hero-photo { height: 70vh; order: -1; margin-top: 64px; }
+  .spread { grid-template-columns: 1fr; }
+  .spread.flip .spread-media { order: 0; }
+}
+@media (max-width: 560px) {
+  .hero-facts { grid-template-columns: 1fr; }
+  .hero-facts > div { border-right: 0; margin-right: 0; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+  .spread-meta { grid-template-columns: 1fr; }
+}

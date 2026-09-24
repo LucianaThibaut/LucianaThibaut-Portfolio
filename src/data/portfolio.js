@@ -40,6 +40,8 @@ export const proyectos = [
       'Actualización catastral de obras hidráulicas de CABA en CAD. Elaboración, control y actualización de planos a partir de relevamientos topográficos y documentación existente, asegurando orden y trazabilidad entre área técnica y obra.',
     tags: ['AutoCAD', 'Catastro', 'Relevamiento topográfico', 'Trazabilidad'],
     plano: 'catastro',
+    rol: 'Analista de CAD',
+    entregables: 'Planos catastrales, informes técnicos',
     destacado: true,
   },
   {
@@ -51,6 +53,8 @@ export const proyectos = [
       'Diseño y cálculo de redes de desagüe pluvial para obra pública. Elaboración de memorias de cálculo, informes técnicos y planos generales y de detalle.',
     tags: ['Hidráulica', 'Cálculo', 'Memorias', 'Planos de detalle'],
     plano: 'pluvial',
+    rol: 'Proyecto y cálculo',
+    entregables: 'Memorias de cálculo, planos generales y de detalle',
     destacado: true,
   },
   {
@@ -62,6 +66,8 @@ export const proyectos = [
       'Planialtimetrías y planos de replanteo para obras de pavimento. Gestión de certificaciones, seguimiento de partes diarios y avance, inspecciones y visitas técnicas a obra.',
     tags: ['Planialtimetría', 'Replanteo', 'Certificaciones', 'Inspección'],
     plano: 'pavimento',
+    rol: 'Proyecto y dirección de obra',
+    entregables: 'Planialtimetrías, planos de replanteo, certificados',
   },
   {
     id: 4,
@@ -72,6 +78,8 @@ export const proyectos = [
       'Cálculo y diseño de instalaciones de incendio para plantas industriales. Memorias de cálculo, planos generales, vistas axonométricas y detalles constructivos, con relevamiento y asesoramiento al cliente.',
     tags: ['Incendio', 'Axonometrías', 'Detalles constructivos', 'Relevamiento'],
     plano: 'incendio',
+    rol: 'Proyectista',
+    entregables: 'Memoria de cálculo, planos, axonometrías, detalles',
   },
   {
     id: 5,
@@ -82,6 +90,8 @@ export const proyectos = [
       'Planos estructurales y de instalaciones sanitarias, eléctricas, de incendio y gas. Análisis de evacuación de incendio con su documentación técnica, relevamientos y seguimiento de obras.',
     tags: ['Instalaciones', 'Evacuación', 'Estructuras', 'Informes'],
     plano: 'evacuacion',
+    rol: 'Asistente técnica',
+    entregables: 'Planos de instalaciones, análisis de evacuación, informes',
   },
 ]
 

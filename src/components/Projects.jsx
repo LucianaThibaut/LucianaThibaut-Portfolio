@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { proyectos } from '../data/portfolio'
+import DraftFrame from './DraftFrame'
 
 function useReveal(threshold = 0.1) {
   const ref = useRef(null)
@@ -120,97 +121,60 @@ const illustrations = {
   ),
 }
 
-function ProjectCard({ proyecto, index, vis }) {
+function ProjectSpread({ proyecto, index }) {
+  const [ref, vis] = useReveal(0.15)
   const IllComp = illustrations[proyecto.plano] || illustrations.pluvial
-  const [hov, setHov] = useState(false)
+  const flip = index % 2 === 1
+  const num = String(index + 1).padStart(2, '0')
 
-  const isWide = index === 0
+  const fade = (delay = 0) => ({
+    opacity: vis ? 1 : 0,
+    transform: vis ? 'none' : 'translateY(28px)',
+    transition: `opacity 0.8s ${delay}ms cubic-bezier(0.16,1,0.3,1), transform 0.8s ${delay}ms cubic-bezier(0.16,1,0.3,1)`,
+  })
 
   return (
-    <article
-      style={{
-        border: '1px solid var(--border)',
-        display: 'flex', flexDirection: 'column',
-        gridColumn: isWide ? 'span 2' : 'span 1',
-        opacity: vis ? 1 : 0,
-        transform: vis ? 'none' : 'translateY(32px)',
-        transition: `opacity 0.65s ${index * 120}ms, transform 0.65s ${index * 120}ms cubic-bezier(0.16,1,0.3,1), border-color 0.25s`,
-        borderColor: hov ? 'var(--ink)' : 'var(--border)',
-        cursor: 'default',
-      }}
-      onMouseEnter={() => setHov(true)}
-      onMouseLeave={() => setHov(false)}
-    >
-      {/* Illustration */}
-      <div style={{
-        height: isWide ? 200 : 180,
-        overflow: 'hidden',
-        position: 'relative',
-        background: '#0D0D0D',
-      }}>
-        <div style={{
-          transition: 'transform 0.6s ease',
-          transform: hov ? 'scale(1.02)' : 'scale(1)',
-          height: '100%',
-        }}>
-          <IllComp />
-        </div>
-
-        {/* Top label */}
-        <div style={{
-          position: 'absolute', top: 12, left: 14,
-          fontSize: 9, fontFamily: "'JetBrains Mono', monospace",
-          color: 'rgba(255,255,255,0.55)', letterSpacing: '0.1em',
-        }}>
-          {proyecto.periodo}
-        </div>
-
-        {/* Badge */}
+    <article ref={ref} className={`spread${flip ? ' flip' : ''}`}>
+      {/* Lámina */}
+      <div className="spread-media" style={fade(0)}>
+        <IllComp />
         {proyecto.destacado && (
-          <div style={{
-            position: 'absolute', top: 12, right: 14,
-            background: 'var(--green)', color: 'var(--paper)',
-            fontSize: 8, letterSpacing: '0.18em', textTransform: 'uppercase',
-            padding: '3px 8px', fontWeight: 600,
-          }}>
-            Destacado
-          </div>
+          <span style={{
+            position: 'absolute', top: 14, right: 14,
+            background: 'var(--paper)', color: 'var(--ink)',
+            fontSize: 11, fontWeight: 600, padding: '3px 10px',
+          }}>Destacado</span>
         )}
-
-        {/* Arrow */}
-        <div style={{
-          position: 'absolute', bottom: 12, right: 14,
-          fontSize: 16, color: 'rgba(255,255,255,0.4)',
-          transition: 'transform 0.25s',
-          transform: hov ? 'translate(3px,-3px)' : 'none',
-        }}>↗</div>
       </div>
 
-      {/* Content */}
-      <div style={{ padding: '24px 24px 28px', background: 'var(--paper)', flex: 1 }}>
-        <h3 style={{ fontSize: 16, fontWeight: 700, letterSpacing: '-0.01em', color: 'var(--ink)', marginBottom: 4 }}>
-          {proyecto.titulo}
-        </h3>
-        <p style={{ fontSize: 11, color: 'var(--green)', letterSpacing: '0.06em', fontWeight: 600, marginBottom: 12, textTransform: 'uppercase' }}>
-          {proyecto.subtitulo}
-        </p>
-        <p style={{ fontSize: 12, lineHeight: 1.75, color: 'var(--muted)', marginBottom: 16 }}>
+      {/* Texto en marco de dibujo */}
+      <div style={fade(150)}>
+        <DraftFrame overshoot={14} style={{ padding: 'clamp(20px, 2.6vw, 32px)' }}>
+          <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 10, fontFamily: "'JetBrains Mono', monospace" }}>
+            Proyecto {num}
+          </p>
+          <h3 style={{
+            fontSize: 'clamp(24px, 2.4vw, 34px)', fontWeight: 800,
+            letterSpacing: '-0.025em', lineHeight: 1.08, color: 'var(--ink)',
+          }}>
+            {proyecto.titulo}
+          </h3>
+          <div style={{ height: 1, background: 'var(--ink)', margin: '18px 0 12px' }} />
+          <p style={{ fontSize: 14, fontWeight: 600, color: 'var(--green)' }}>
+            {proyecto.subtitulo}
+          </p>
+        </DraftFrame>
+
+        <p style={{ fontSize: 15, lineHeight: 1.75, color: 'var(--muted)', marginTop: 28 }}>
           {proyecto.descripcion}
         </p>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
-          {proyecto.tags.map(tag => (
-            <span key={tag} style={{
-              border: '1px solid var(--border)',
-              padding: '3px 10px',
-              fontSize: 9, letterSpacing: '0.14em', textTransform: 'uppercase',
-              color: 'var(--muted)', fontWeight: 500,
-              transition: 'border-color 0.2s, color 0.2s',
-            }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--green)'; e.currentTarget.style.color = 'var(--green)' }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--muted)' }}
-            >{tag}</span>
-          ))}
-        </div>
+
+        <dl className="spread-meta">
+          <div><dt>Período</dt><dd>{proyecto.periodo}</dd></div>
+          <div><dt>Rol</dt><dd>{proyecto.rol}</dd></div>
+          <div style={{ gridColumn: '1 / -1' }}><dt>Entregables</dt><dd>{proyecto.entregables}</dd></div>
+          <div style={{ gridColumn: '1 / -1' }}><dt>Temas</dt><dd>{proyecto.tags.join(', ')}</dd></div>
+        </dl>
       </div>
     </article>
   )
@@ -218,7 +182,6 @@ function ProjectCard({ proyecto, index, vis }) {
 
 export default function Projects() {
   const [headRef, headVis] = useReveal(0.1)
-  const [gridRef, gridVis] = useReveal(0.05)
 
   return (
     <section id="proyectos" style={{ borderBottom: '1px solid var(--border)', background: 'var(--paper)' }}>
@@ -233,76 +196,28 @@ export default function Projects() {
 
         {/* Title row */}
         <div ref={headRef} style={{
-          display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end',
-          marginBottom: 48, gap: 32,
+          display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap',
+          marginBottom: 72, gap: 32,
+          opacity: headVis ? 1 : 0,
+          transform: headVis ? 'none' : 'translateY(24px)',
+          transition: 'opacity 0.7s, transform 0.7s',
         }}>
           <h2 style={{
             fontSize: 'clamp(28px, 3vw, 42px)',
             fontWeight: 800, letterSpacing: '-0.02em', lineHeight: 1.1,
             color: 'var(--ink)',
-            opacity: headVis ? 1 : 0,
-            transform: headVis ? 'none' : 'translateY(24px)',
-            transition: 'opacity 0.7s, transform 0.7s',
           }}>
-            Trabajo real,<br />
-            <span style={{ color: 'var(--green)' }}>documentado en detalle.</span>
+            Trabajo real,<br />documentado en detalle.
           </h2>
-          <p style={{
-            fontSize: 12, lineHeight: 1.7, color: 'var(--muted)',
-            maxWidth: 300, textAlign: 'right',
-            opacity: headVis ? 1 : 0,
-            transform: headVis ? 'none' : 'translateY(24px)',
-            transition: 'opacity 0.7s 0.1s, transform 0.7s 0.1s',
-            flexShrink: 0,
-          }}>
-            Hidráulica, pavimentos, instalaciones y catastro, en obra pública y privada: del cálculo al plano que llega a obra.
+          <p style={{ fontSize: 14, lineHeight: 1.7, color: 'var(--muted)', maxWidth: 360 }}>
+            Hidráulica, pavimentos, instalaciones y catastro, en obra pública y privada:
+            del cálculo al plano que llega a obra.
           </p>
         </div>
 
-        {/* Projects grid */}
-        <div ref={gridRef} style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: 1,
-          background: 'var(--border)',
-        }}>
-          {proyectos.map((p, i) => (
-            <ProjectCard key={p.id} proyecto={p} index={i} vis={gridVis} />
-          ))}
-        </div>
-
-        {/* Stats bar */}
-        <div style={{
-          display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
-          gap: 1, background: 'var(--border)',
-          marginTop: 1,
-        }}>
-          {[
-            { n: '4+', l: 'Años de experiencia' },
-            { n: '4', l: 'Organizaciones públicas y privadas' },
-            { n: '5', l: 'Áreas: hidráulica, vial, incendio, catastro, instalaciones' },
-          ].map(({ n, l }) => (
-            <div key={l}
-              style={{
-                background: 'var(--paper)', padding: '24px 28px', textAlign: 'center',
-                transition: 'background 0.25s',
-              }}
-              onMouseEnter={e => {
-                e.currentTarget.style.background = 'var(--ink)'
-                e.currentTarget.querySelectorAll('[data-n]').forEach(el => el.style.color = 'var(--paper)')
-                e.currentTarget.querySelectorAll('[data-l]').forEach(el => el.style.color = 'rgba(247,244,239,0.5)')
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.background = 'var(--paper)'
-                e.currentTarget.querySelectorAll('[data-n]').forEach(el => el.style.color = 'var(--green)')
-                e.currentTarget.querySelectorAll('[data-l]').forEach(el => el.style.color = 'var(--muted)')
-              }}
-            >
-              <p data-n style={{ fontSize: 28, fontWeight: 800, color: 'var(--green)', lineHeight: 1, marginBottom: 6, transition: 'color 0.25s' }}>{n}</p>
-              <p data-l style={{ fontSize: 10, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--muted)', transition: 'color 0.25s' }}>{l}</p>
-            </div>
-          ))}
-        </div>
+        {proyectos.map((p, i) => (
+          <ProjectSpread key={p.id} proyecto={p} index={i} />
+        ))}
       </div>
     </section>
   )
