@@ -379,7 +379,7 @@ export const proyectos = [
   {
     id: 'peatonal-san-justo',
     titulo: 'Peatonal - Plaza de San Justo',
-    resumen: 'Proyecto del Municipio de La Matanza para la peatonal de la plaza de San Justo, sobre las calles Irigoyen y T. J. Villegas, entre Dr. I. Arieta y Almafuerte. Incluye las planialtimetrías de las canaletas pluviales, con conductos de Ø600 y Ø500 mm y pendiente de 2 ‰, y el perfil tipo del nuevo pavimento de hormigón simple H30.',
+    resumen: 'Desarrollo del proyecto hidráulico de canaletas pluviales para la ejecución de la Peatonal de San Justo. El proyecto contempla la definición de las canaletas y el perfil tipo del pavimento, como documentación técnica para su posterior ejecución en obra.',
     meta: [],
     laminas: [
       {
@@ -519,7 +519,7 @@ export const proyectos = [
     id: 'actualizacion-catastral-caba',
     titulo: 'Actualización catastral de obras hidráulicas - CABA 2025-2026',
     resumen:
-      'Actualización y normalización catastral de la infraestructura hidráulica y la red de desagües pluviales de la Ciudad Autónoma de Buenos Aires, desarrollada para Soluciones Químicas S.A. Comprende el relevamiento sistemático en CAD de la red de conductos pluviales, sumideros simples y con cámara, bocas de registro y cámaras ciegas, incorporando nomenclatura catastral, profundidades, tapadas, diámetros y materiales normalizados.',
+      'Proyecto de relevamiento y actualización de las obras hidráulicas existentes en CABA. Se realizó la actualización y georreferenciación de elementos hidráulicos, utilizando XREF y bloques con atributos para organizar y estandarizar la información en AutoCAD. Además, se desarrolló un flujo de trabajo Excel-AutoCAD para automatizar la incorporación de datos mediante bloques con atributos, reduciendo la carga manual y los errores de transcripción.',
     meta: [
       { l: 'Comitente', v: 'Soluciones Químicas S.A. · CABA' },
       { l: 'Período', v: '2025 — 2026' },
