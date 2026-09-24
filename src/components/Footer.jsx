@@ -1,15 +1,27 @@
+import { Mail, Phone } from 'lucide-react'
 import { personal } from '../data/portfolio'
 
+// Pie sencillo con los datos de contacto. Los botones "Contactar" apuntan acá.
 export default function Footer() {
   return (
-    <footer className="footer">
+    <footer id="contacto" className="footer" aria-labelledby="contacto-title">
       <div className="container footer-inner">
-        <p>© {new Date().getFullYear()} Luciana Thibaut, ingeniera civil. {personal.ubicacion}.</p>
-        <nav className="footer-links" aria-label="Contacto">
-          <a href={`mailto:${personal.email}`}>Email</a>
-          <a href={personal.telefonoHref}>Teléfono</a>
-          <a href="#inicio">Volver arriba</a>
-        </nav>
+        <div>
+          <h2 id="contacto-title" className="footer-name">Luciana Thibaut</h2>
+          <p>Ingeniera civil · {personal.ubicacion}</p>
+        </div>
+        <ul className="footer-contact">
+          <li>
+            <a href={`mailto:${personal.email}`}>
+              <Mail size={17} aria-hidden="true" /> {personal.email}
+            </a>
+          </li>
+          <li>
+            <a href={personal.telefonoHref}>
+              <Phone size={17} aria-hidden="true" /> {personal.telefono}
+            </a>
+          </li>
+        </ul>
       </div>
     </footer>
   )

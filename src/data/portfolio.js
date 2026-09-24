@@ -7,7 +7,7 @@ export const personal = {
   email: 'lucianathibaut@hotmail.com',
   telefono: '(011) 3957 5435',
   telefonoHref: 'tel:+541139575435',
-  ubicacion: 'Ituzaingó, Buenos Aires',
+  ubicacion: 'Buenos Aires, Argentina',
   foto: '/luciana.jpg',
   resumen:
     'Soy ingeniera civil (UNLaM) y hace más de 4 años trabajo en documentación técnica de proyectos de ingeniería: planos, memorias de cálculo, informes y documentación de obra. Pasé por hidráulica, pavimentos e instalaciones contra incendio, en organismos públicos y en empresas privadas. Hoy actualizo el catastro de obras hidráulicas de la Ciudad de Buenos Aires en Soluciones Químicas.',
@@ -473,7 +473,7 @@ export const proyectos = [
     meta: [
       { l: 'Comitente', v: 'Soluciones Químicas S.A. · CABA' },
       { l: 'Período', v: '2025 — 2026' },
-      { l: 'Ubicación', v: 'Ciudad Autónoma de Buenos Aires' },
+      { l: 'Ubicación', v: 'Buenos Aires, Argentina' },
     ],
     laminas: [
       {
