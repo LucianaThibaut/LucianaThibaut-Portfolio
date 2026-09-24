@@ -467,7 +467,7 @@ export const proyectos = [
   },
   {
     id: 'actualizacion-catastral-caba',
-    titulo: 'Actualización catastral de obras hidráulicas - CABA 2025-2026',
+    titulo: 'Actualización catastral de obras hidráulicas - CABA',
     resumen:
       'Proyecto de relevamiento y actualización de las obras hidráulicas existentes en CABA. Se realizó la actualización y georreferenciación de elementos hidráulicos, utilizando XREF y bloques con atributos para organizar y estandarizar la información en AutoCAD. Además, se desarrolló un flujo de trabajo Excel-AutoCAD para automatizar la incorporación de datos mediante bloques con atributos, reduciendo la carga manual y los errores de transcripción.',
     meta: [
