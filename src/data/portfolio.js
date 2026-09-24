@@ -538,6 +538,84 @@ export const proyectos = [
       },
     ],
   },
+  {
+    id: 'actualizacion-catastral-caba',
+    titulo: 'Actualización catastral de obras hidráulicas - CABA 2025-2026',
+    resumen:
+      'Actualización y normalización catastral de la infraestructura hidráulica y la red de desagües pluviales de la Ciudad Autónoma de Buenos Aires, desarrollada para Soluciones Químicas S.A. Comprende el relevamiento sistemático en CAD de la red de conductos pluviales, sumideros simples y con cámara, bocas de registro y cámaras ciegas, incorporando nomenclatura catastral, profundidades, tapadas, diámetros y materiales normalizados.',
+    meta: [
+      { l: 'Comitente', v: 'Soluciones Químicas S.A. · CABA' },
+      { l: 'Período', v: '2025 — 2026' },
+      { l: 'Ubicación', v: 'Ciudad Autónoma de Buenos Aires' },
+      { l: 'Alcance', v: 'Catastro pluvial en CAD, sumideros, cámaras y conductos', full: true },
+    ],
+    laminas: [
+      {
+        id: '01-zona-catastro',
+        titulo: 'Zona catastro',
+        descripcion:
+          'Plano macro de delimitación territorial y zonificación operativa para la actualización catastral de obras hidráulicas en la Ciudad Autónoma de Buenos Aires, con subdivisión por sectores (I a V) sobre la trama urbana de la Ciudad.',
+        specs: [
+          'Zonificación macro CABA',
+          'Sectores I a V',
+          'Límites comunales y cuencas',
+          'Base cartográfica general',
+        ],
+        img: '/planos/catastro/01-zona-catastro.webp',
+        full: '/planos/catastro/01-zona-catastro-full.webp',
+        w: 1796,
+        h: 1978,
+      },
+      {
+        id: '02-sector-1',
+        titulo: 'Sector 1',
+        descripcion:
+          'Plano catastral del Sector 1 sobre el tejido urbano de CABA. Relevamiento integral de la red de conductos pluviales, sumideros y bocas de registro, con tablas de atributos técnicos vinculadas: tipología, profundidad, material y diámetro de nexos, y cotas de tapada inicial y final.',
+        specs: [
+          'Red pluvial Sector 1',
+          'Planilla técnica de sumideros',
+          'Bocas de registro pluviales',
+          'Atributos catastrales en CAD',
+        ],
+        img: '/planos/catastro/02-plano-sector-1.webp',
+        full: '/planos/catastro/02-plano-sector-1-full.webp',
+        w: 1720,
+        h: 1967,
+      },
+      {
+        id: '03-catastro-ejemplo',
+        titulo: 'Catastro ejemplo',
+        descripcion:
+          'Detalle de relevamiento catastral a escala de sector urbano (entorno Barrio Rodrigo Bueno). Traza de conductos principales de PEAD (Ø450 a Ø900 mm), nexos de sumideros, cámaras de inspección, cotas de tapada, progresivas de tramo y profundidades de instalación.',
+        specs: [
+          'Conductos PEAD Ø450 a Ø900',
+          'Cámaras de inspección y nexos',
+          'Tapadas inicial y final',
+          'Detalle de instalación en planta',
+        ],
+        img: '/planos/catastro/03-catastro-ejemplo.webp',
+        full: '/planos/catastro/03-catastro-ejemplo-full.webp',
+        w: 2400,
+        h: 1468,
+      },
+      {
+        id: '04-referencias',
+        titulo: 'Referencias',
+        descripcion:
+          'Lámina normativa de simbología, bloques y estandarización de layers para el catastro de obras hidráulicas. Define la codificación de sumideros, sumideros con cámara, bocas de registro pluviales y cloacales, cámaras ciegas, intermedias, rejas perimetrales, conductos (Ø400 a Ø1300 mm) y nexos.',
+        specs: [
+          'Estandarización de layers CAD',
+          'Bloques normalizados con atributos',
+          'Sumideros y bocas de registro',
+          'Conductos Ø400 a >Ø1300',
+        ],
+        img: '/planos/catastro/04-referencias.webp',
+        full: '/planos/catastro/04-referencias-full.webp',
+        w: 1585,
+        h: 2705,
+      },
+    ],
+  },
 ]
 
 export const experiencia = [
