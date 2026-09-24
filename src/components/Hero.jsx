@@ -23,9 +23,9 @@ export default function Hero() {
               Luciana<br />Thibaut
             </h1>
             <p className="hero-role hero-in" style={{ animationDelay: '0.35s' }}>
-              Ingeniera civil
+              <span>Ingeniera civil</span>
               <span className="sep" aria-hidden="true" />
-              Gestión documental de proyectos
+              <span>Gestión documental de proyectos</span>
             </p>
           </DraftFrame>
 

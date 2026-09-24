@@ -96,7 +96,7 @@ ul, ol { list-style: none; }
   border: 1px solid transparent;
   transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
 }
-.btn svg { transition: transform 0.2s var(--ease); }
+.btn svg { flex: none; transition: transform 0.2s var(--ease); }
 .btn:hover svg { transform: translateX(3px); }
 .btn-primary { background: var(--green); color: var(--paper); }
 .btn-primary:hover { background: var(--green-2); }
@@ -531,7 +531,14 @@ button.contact-item { width: 100%; text-align: left; font: inherit; }
 @media (max-width: 960px) {
   .nav-links { display: none; }
   .nav-toggle-pill { display: flex; }
-  .nav-brand-pill { padding-right: 6px; }
+  /* Franja de papel detrás de las cápsulas para que el contenido no asome */
+  .nav { top: 0; padding-top: 14px; }
+  .nav::before {
+    content: ''; position: absolute; left: 0; right: 0; top: 0; height: 88px;
+    background: linear-gradient(var(--paper) 70%, rgba(247,244,239,0));
+    pointer-events: none;
+  }
+  .nav-inner { position: relative; }
   .nav.is-open .nav-sheet { display: block; }
 
   .hero { padding-top: 112px; min-height: 0; }
@@ -546,15 +553,79 @@ button.contact-item { width: 100%; text-align: left; font: inherit; }
   .spread.flip .spread-media { order: 0; }
 }
 @media (max-width: 600px) {
+  /* Nav: franja de papel detrás de las cápsulas para que el contenido no asome */
+  .nav { top: 0; padding-top: 12px; }
+  .nav::before {
+    content: ''; position: absolute; left: 0; right: 0; top: 0; height: 84px;
+    background: linear-gradient(var(--paper) 70%, rgba(247,244,239,0));
+    pointer-events: none;
+  }
+  .nav-inner { position: relative; }
+  .nav-pill { height: 52px; }
+  .nav-mono { width: 40px; height: 40px; font-size: 13px; }
+  .nav-toggle { width: 40px; height: 40px; }
   .nav-name span { display: none; }
-  .hero-facts { grid-template-columns: 1fr; gap: 12px; }
+  html { scroll-padding-top: 84px; }
+
+  /* Marco de dibujo: líneas más cortas para no tocar el borde */
+  .draft > .draft-line.t, .draft > .draft-line.b { left: -8px; right: -8px; }
+  .draft > .draft-line.l, .draft > .draft-line.r { top: -8px; bottom: -8px; }
+
+  /* Hero */
+  .hero { padding-top: 96px; }
+  .hero-frame { padding: 24px 20px; }
+  .hero-role { flex-direction: column; align-items: flex-start; gap: 2px; }
+  .hero-role .sep { display: none; }
+  .hero-lead { font-size: 16.5px; margin-top: 28px; }
+  .hero-facts { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
   .hero-facts div { border: 0; margin: 0; padding: 0; }
-  .hero-actions .btn { flex: 1; justify-content: center; }
+  .hero-facts dd { font-size: 15px; line-height: 1.35; }
+  .hero-actions .btn { flex: 1; justify-content: center; padding: 0 16px; }
+  .hero-photo { aspect-ratio: 4 / 4.4; }
+  .hero-photo figcaption { left: 12px; right: 12px; bottom: 12px; padding: 10px 12px; }
+
+  /* Secciones y tarjetas */
+  .section-head { margin-bottom: 36px; }
+  .card { padding: 22px 20px; border-radius: var(--r); }
   .skills-grid, .facts, .spread-meta { grid-template-columns: 1fr; }
-  .job-head { grid-template-columns: 1fr; }
-  .job-period { grid-column: 1; grid-row: auto; justify-self: start; }
-  .job-toggle { display: none; }
-  .job-body { grid-template-rows: 1fr; }
+  .skill { padding: 22px 20px; border-radius: var(--r); }
+  .spread-frame { padding: 22px 20px; }
+  .spread-media { border-radius: var(--r); }
+  .soft { gap: 6px; }
+  .soft-label { width: 100%; margin-bottom: 4px; }
+
+  /* Herramientas: nombre arriba, uso abajo */
+  .tool-row { flex-direction: column; align-items: flex-start; gap: 2px; }
+  .tool-row span { text-align: left; }
+
+  /* Línea de tiempo más compacta */
+  .timeline::before { left: 7px; }
+  .job { padding-left: 28px; }
+  .job-dot { left: 0; top: 24px; }
+  .job-card { border-radius: var(--r); }
+  .job-head { grid-template-columns: minmax(0, 1fr) auto; padding: 18px 18px; }
+  .job-role { grid-column: 1; grid-row: 1; font-size: 17px; }
+  .job-toggle { grid-column: 2; grid-row: 1; }
+  .job-period { grid-column: 1; grid-row: 2; justify-self: start; }
+  .job-company { grid-column: 1; grid-row: 3; }
+  .job-inner { padding: 0 18px 20px; }
+
+  /* Contacto: un solo nivel de padding */
+  .contact-panel { padding: 28px 18px; border-radius: var(--r-lg); gap: 32px; }
+  .contact-item { padding: 12px; gap: 12px; }
+  .contact-item .ico { width: 36px; height: 36px; }
+  .contact-item strong { font-size: clamp(13px, 3.7vw, 14.5px); overflow-wrap: anywhere; }
+  .contact-item .end { font-size: 0; gap: 0; }
+  .form { padding: 22px 18px; border-radius: var(--r); }
+  .form .btn { align-self: stretch; justify-content: center; }
+
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+}
+
+/* Teléfonos muy angostos (≤ 400 px): el mail entra en una línea */
+@media (max-width: 400px) {
+  .contact-item .ico { display: none; }
+  .contact-item strong { font-size: 14px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
