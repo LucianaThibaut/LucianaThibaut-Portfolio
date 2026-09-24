@@ -3,7 +3,6 @@ import { Menu, X, ArrowRight } from 'lucide-react'
 
 const links = [
   { label: 'Perfil',       id: 'perfil' },
-  { label: 'Competencias', id: 'competencias' },
   { label: 'Proyectos',    id: 'proyectos' },
   { label: 'Experiencia',  id: 'experiencia' },
 ]

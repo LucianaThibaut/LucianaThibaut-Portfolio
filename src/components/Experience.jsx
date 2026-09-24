@@ -49,7 +49,7 @@ export default function Experience() {
       <div className="container">
         <SectionHead
           id="experiencia-title"
-          num="04"
+          num="03"
           kicker="Experiencia"
           title="Trayectoria profesional."
           intro="Cuatro organizaciones, del sector público al privado, siempre del lado de la documentación técnica."

@@ -35,7 +35,7 @@ export default function Contact() {
       <div className="container">
         <div ref={ref} className={`contact-panel ${revealClass(visible)}`}>
           <div>
-            <p className="section-kicker"><span className="num">05</span> Contacto</p>
+            <p className="section-kicker"><span className="num">04</span> Contacto</p>
             <h2 id="contacto-title" className="contact-title">Trabajemos juntos.</h2>
             <p className="contact-text">
               Si tu equipo necesita producir, ordenar o controlar la documentación técnica

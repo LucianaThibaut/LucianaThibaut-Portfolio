@@ -10,7 +10,7 @@ export const personal = {
   ubicacion: 'Ituzaingó, Buenos Aires',
   foto: '/luciana.jpg',
   resumen:
-    'Ingeniera Civil con más de 4 años de experiencia en la elaboración, gestión y administración de documentación técnica de proyectos de ingeniería: planos, memorias de cálculo, informes y documentación de obra. Acostumbrada a coordinar información entre áreas técnicas, obra y clientes, con atención al detalle, organización y capacidad de trabajar bajo presión.',
+    'Soy ingeniera civil (UNLaM) y hace más de 4 años trabajo en documentación técnica de proyectos de ingeniería: planos, memorias de cálculo, informes y documentación de obra. Pasé por hidráulica, pavimentos e instalaciones contra incendio, en organismos públicos y en empresas privadas. Hoy actualizo el catastro de obras hidráulicas de la Ciudad de Buenos Aires en Soluciones Químicas.',
 }
 
 // Herramientas agrupadas como en el CV (sin porcentajes inventados)
@@ -158,54 +158,6 @@ export const datos = [
   { l: 'Inglés', v: 'B2 · Upper Intermediate' },
   { l: 'Licencia de conducir', v: 'B1' },
   { l: 'Disponibilidad para viajar', v: 'Sí' },
-]
-
-export const competencias = [
-  {
-    icono: '⊡',
-    titulo: 'Documentación técnica en CAD',
-    descripcion:
-      'Planos generales, de detalle, de replanteo y catastrales en AutoCAD y Civil 3D, controlados y actualizados a partir de relevamientos.',
-  },
-  {
-    icono: '◫',
-    titulo: 'Gestión documental',
-    descripcion:
-      'Orden, versionado y trazabilidad de planos, memorias e informes en SharePoint y Teams, con criterios de ISO 9001 e ISO 14001.',
-  },
-  {
-    icono: '◱',
-    titulo: 'Cálculo hidráulico',
-    descripcion:
-      'Diseño y cálculo de redes de desagüe pluvial y memorias de cálculo, con EPANET y FlowMaster.',
-  },
-  {
-    icono: '◲',
-    titulo: 'Instalaciones',
-    descripcion:
-      'Proyecto de instalaciones contra incendio, sanitarias, eléctricas y de gas, y análisis de evacuación.',
-  },
-  {
-    icono: '◳',
-    titulo: 'Seguimiento de obra',
-    descripcion:
-      'Certificaciones, partes diarios, control de avance, inspecciones y visitas técnicas en obra pública.',
-  },
-  {
-    icono: '◰',
-    titulo: 'Nexo entre áreas',
-    descripcion:
-      'Coordinación de la información entre oficina técnica, obra y clientes, con comunicación clara y bajo presión.',
-  },
-]
-
-export const habilidadesBlandas = [
-  'Organización y atención al detalle',
-  'Gestión del tiempo y prioridades',
-  'Comunicación clara y asertiva',
-  'Proactividad',
-  'Orientación al servicio',
-  'Negociación y manejo de conflictos',
 ]
 
 export const marqueeItems = [

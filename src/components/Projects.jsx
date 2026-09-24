@@ -151,7 +151,7 @@ export default function Projects() {
       <div className="container">
         <SectionHead
           id="proyectos-title"
-          num="03"
+          num="02"
           kicker="Proyectos"
           title="Trabajo real, documentado en detalle."
           intro="Hidráulica, pavimentos, instalaciones y catastro, en obra pública y privada: del cálculo al plano que llega a obra."
