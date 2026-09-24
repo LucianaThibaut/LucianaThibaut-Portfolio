@@ -36,12 +36,13 @@ export const proyectos = [
   {
     id: 'planta-industrial',
     titulo: 'Proyecto de planta industrial',
-    contexto: 'Planta industrial',
-    anio: '2026',
     resumen:
       'Tres planos de un mismo sector: el movimiento de suelo que define niveles y pendientes, las vigas de hormigón armado sobre las que circulan las grúas RTG y las fundaciones de las torres de iluminación, coordinadas con los pavimentos y las vigas.',
-    rol: 'Desarrollo de planos',
-    materiales: 'Hormigón H-30 · Acero ADN420',
+    meta: [
+      { l: 'Rol', v: 'Desarrollo de planos' },
+      { l: 'Año', v: '2026' },
+      { l: 'Materiales', v: 'Hormigón H-30 · Acero ADN420', full: true },
+    ],
     laminas: [
       {
         id: 'movimiento-de-suelo',
@@ -74,6 +75,403 @@ export const proyectos = [
         w: 2000, h: 867,
       },
     ],
+  },
+  {
+    id: 'vivienda-unifamiliar',
+    titulo: 'Vivienda unifamiliar',
+    resumen: 'Proyecto académico realizado en 2020 dentro de la carrera de Ingeniería Civil de la UNLaM. Diseño y documentación completa de una vivienda de dos plantas con subsuelo: arquitectura, estructura de hormigón armado e instalaciones sanitaria, de gas, eléctrica y termomecánica. El programa incluye una sala de cine en el subsuelo; living, cocina-comedor, oficina y salón de música en planta baja; y tres dormitorios con play-room en el primer piso.',
+    meta: [
+      {
+        l: 'Tipo',
+        v: 'Proyecto académico · UNLaM'
+      },
+      {
+        l: 'Año',
+        v: '2020'
+      },
+      {
+        l: 'Alcance',
+        v: 'Arquitectura, estructura e instalaciones',
+        full: true
+      }
+    ],
+    grupos: [
+      {
+        id: 'arquitectura',
+        titulo: 'Arquitectura',
+        descripcion: 'Plantas de subsuelo, planta baja, primer piso y azotea, cortes A-A y B-B y vistas de frente, contrafrente y laterales. Definición de locales, circulaciones, niveles y aberturas.',
+        specs: [
+          'Plantas, cortes y vistas',
+          'Escalas 1:70 a 1:150'
+        ],
+        laminas: [
+          {
+            id: '01-arq-subsuelo',
+            titulo: 'Subsuelo',
+            img: '/planos/vivienda/01-arq-subsuelo.webp',
+            full: '/planos/vivienda/01-arq-subsuelo-full.webp',
+            w: 1348,
+            h: 996
+          },
+          {
+            id: '02-arq-planta-baja',
+            titulo: 'Planta baja',
+            img: '/planos/vivienda/02-arq-planta-baja.webp',
+            full: '/planos/vivienda/02-arq-planta-baja-full.webp',
+            w: 1096,
+            h: 1804
+          },
+          {
+            id: '03-arq-primer-piso',
+            titulo: 'Primer piso',
+            img: '/planos/vivienda/03-arq-primer-piso.webp',
+            full: '/planos/vivienda/03-arq-primer-piso-full.webp',
+            w: 1400,
+            h: 1804
+          },
+          {
+            id: '04-arq-azotea',
+            titulo: 'Azotea',
+            img: '/planos/vivienda/04-arq-azotea.webp',
+            full: '/planos/vivienda/04-arq-azotea-full.webp',
+            w: 1400,
+            h: 1804
+          },
+          {
+            id: '05-arq-corte-aa',
+            titulo: 'Corte A-A',
+            img: '/planos/vivienda/05-arq-corte-aa.webp',
+            full: '/planos/vivienda/05-arq-corte-aa-full.webp',
+            w: 1400,
+            h: 1002
+          },
+          {
+            id: '06-arq-corte-bb',
+            titulo: 'Corte B-B',
+            img: '/planos/vivienda/06-arq-corte-bb.webp',
+            full: '/planos/vivienda/06-arq-corte-bb-full.webp',
+            w: 1400,
+            h: 1048
+          },
+          {
+            id: '07-arq-vista-frente',
+            titulo: 'Vista de frente',
+            img: '/planos/vivienda/07-arq-vista-frente.webp',
+            full: '/planos/vivienda/07-arq-vista-frente-full.webp',
+            w: 1999,
+            h: 994
+          },
+          {
+            id: '08-arq-vista-contrafrente',
+            titulo: 'Vista de contrafrente',
+            img: '/planos/vivienda/08-arq-vista-contrafrente.webp',
+            full: '/planos/vivienda/08-arq-vista-contrafrente-full.webp',
+            w: 1582,
+            h: 1010
+          },
+          {
+            id: '09-arq-vistas-laterales',
+            titulo: 'Vistas laterales',
+            img: '/planos/vivienda/09-arq-vistas-laterales.webp',
+            full: '/planos/vivienda/09-arq-vistas-laterales-full.webp',
+            w: 1999,
+            h: 1476
+          }
+        ]
+      },
+      {
+        id: 'estructura',
+        titulo: 'Estructura',
+        descripcion: 'Plantas de estructura de hormigón armado bajo subsuelo, sobre subsuelo, sobre planta baja y sobre primer piso: fundaciones, columnas, vigas y losas con su dimensionado.',
+        specs: [
+          'Hormigón armado',
+          'Losas de 12 cm',
+          'Escala 1:100'
+        ],
+        laminas: [
+          {
+            id: '10-est-bajo-subsuelo',
+            titulo: 'Bajo subsuelo',
+            img: '/planos/vivienda/10-est-bajo-subsuelo.webp',
+            full: '/planos/vivienda/10-est-bajo-subsuelo-full.webp',
+            w: 708,
+            h: 646
+          },
+          {
+            id: '11-est-sobre-subsuelo',
+            titulo: 'Sobre subsuelo',
+            img: '/planos/vivienda/11-est-sobre-subsuelo.webp',
+            full: '/planos/vivienda/11-est-sobre-subsuelo-full.webp',
+            w: 1148,
+            h: 1226
+          },
+          {
+            id: '12-est-sobre-planta-baja',
+            titulo: 'Sobre planta baja',
+            img: '/planos/vivienda/12-est-sobre-planta-baja.webp',
+            full: '/planos/vivienda/12-est-sobre-planta-baja-full.webp',
+            w: 1004,
+            h: 1146
+          },
+          {
+            id: '13-est-sobre-primer-piso',
+            titulo: 'Sobre primer piso',
+            img: '/planos/vivienda/13-est-sobre-primer-piso.webp',
+            full: '/planos/vivienda/13-est-sobre-primer-piso-full.webp',
+            w: 1004,
+            h: 1108
+          }
+        ]
+      },
+      {
+        id: 'sanitaria',
+        titulo: 'Sanitaria',
+        descripcion: 'Instalación sanitaria y de agua por planta: desagües cloacales y pluviales, provisión de agua fría y caliente, tanque de reserva y equipo de bombeo desde el subsuelo.',
+        specs: [
+          'Tanque de reserva 1000 l',
+          'Tanque de bombeo 700 l',
+          'Pluviales con embudos 25×25 cm'
+        ],
+        laminas: [
+          {
+            id: '14-san-subsuelo',
+            titulo: 'Subsuelo',
+            img: '/planos/vivienda/14-san-subsuelo.webp',
+            full: '/planos/vivienda/14-san-subsuelo-full.webp',
+            w: 1286,
+            h: 1218
+          },
+          {
+            id: '15-san-planta-baja',
+            titulo: 'Planta baja',
+            img: '/planos/vivienda/15-san-planta-baja.webp',
+            full: '/planos/vivienda/15-san-planta-baja-full.webp',
+            w: 980,
+            h: 1797
+          },
+          {
+            id: '16-san-primer-piso',
+            titulo: 'Primer piso',
+            img: '/planos/vivienda/16-san-primer-piso.webp',
+            full: '/planos/vivienda/16-san-primer-piso-full.webp',
+            w: 1400,
+            h: 1804
+          },
+          {
+            id: '17-san-azotea',
+            titulo: 'Azotea',
+            img: '/planos/vivienda/17-san-azotea.webp',
+            full: '/planos/vivienda/17-san-azotea-full.webp',
+            w: 1400,
+            h: 1804
+          }
+        ]
+      },
+      {
+        id: 'gas',
+        titulo: 'Gas',
+        descripcion: 'Instalación de gas en planta baja con el recorrido de la cañería y los artefactos conectados.',
+        specs: [
+          'Planta baja',
+          'Escala 1:100'
+        ],
+        laminas: [
+          {
+            id: '18-gas-planta-baja',
+            titulo: 'Planta baja',
+            img: '/planos/vivienda/18-gas-planta-baja.webp',
+            full: '/planos/vivienda/18-gas-planta-baja-full.webp',
+            w: 1400,
+            h: 1804
+          }
+        ]
+      },
+      {
+        id: 'electrica',
+        titulo: 'Eléctrica',
+        descripcion: 'Instalación eléctrica en subsuelo, planta baja y primer piso, en dos juegos de planos: luminarias y tomacorrientes, con circuitos, secciones de conductores y cañerías.',
+        specs: [
+          'Luminarias y tomacorrientes',
+          'Conductores de 1,5 a 10 mm²'
+        ],
+        laminas: [
+          {
+            id: '19-ele-luminarias-subsuelo',
+            titulo: 'Luminarias · Subsuelo',
+            img: '/planos/vivienda/19-ele-luminarias-subsuelo.webp',
+            full: '/planos/vivienda/19-ele-luminarias-subsuelo-full.webp',
+            w: 1286,
+            h: 876
+          },
+          {
+            id: '20-ele-luminarias-planta-baja',
+            titulo: 'Luminarias · Planta baja',
+            img: '/planos/vivienda/20-ele-luminarias-planta-baja.webp',
+            full: '/planos/vivienda/20-ele-luminarias-planta-baja-full.webp',
+            w: 980,
+            h: 1801
+          },
+          {
+            id: '21-ele-luminarias-primer-piso',
+            titulo: 'Luminarias · Primer piso',
+            img: '/planos/vivienda/21-ele-luminarias-primer-piso.webp',
+            full: '/planos/vivienda/21-ele-luminarias-primer-piso-full.webp',
+            w: 1400,
+            h: 1804
+          },
+          {
+            id: '22-ele-tomas-subsuelo',
+            titulo: 'Tomacorrientes · Subsuelo',
+            img: '/planos/vivienda/22-ele-tomas-subsuelo.webp',
+            full: '/planos/vivienda/22-ele-tomas-subsuelo-full.webp',
+            w: 1286,
+            h: 1207
+          },
+          {
+            id: '23-ele-tomas-planta-baja',
+            titulo: 'Tomacorrientes · Planta baja',
+            img: '/planos/vivienda/23-ele-tomas-planta-baja.webp',
+            full: '/planos/vivienda/23-ele-tomas-planta-baja-full.webp',
+            w: 978,
+            h: 1793
+          },
+          {
+            id: '24-ele-tomas-primer-piso',
+            titulo: 'Tomacorrientes · Primer piso',
+            img: '/planos/vivienda/24-ele-tomas-primer-piso.webp',
+            full: '/planos/vivienda/24-ele-tomas-primer-piso-full.webp',
+            w: 1400,
+            h: 1804
+          }
+        ]
+      },
+      {
+        id: 'termomecanica',
+        titulo: 'Termomecánica',
+        descripcion: 'Climatización con equipos de aire acondicionado: ubicación de unidades interiores y exteriores y recorrido de cañerías en planta baja, primer piso y azotea.',
+        specs: [
+          'Aire acondicionado',
+          'Unidades interiores y exteriores'
+        ],
+        laminas: [
+          {
+            id: '25-termo-planta-baja',
+            titulo: 'Planta baja',
+            img: '/planos/vivienda/25-termo-planta-baja.webp',
+            full: '/planos/vivienda/25-termo-planta-baja-full.webp',
+            w: 1314,
+            h: 1804
+          },
+          {
+            id: '26-termo-primer-piso',
+            titulo: 'Primer piso',
+            img: '/planos/vivienda/26-termo-primer-piso.webp',
+            full: '/planos/vivienda/26-termo-primer-piso-full.webp',
+            w: 1400,
+            h: 1804
+          },
+          {
+            id: '27-termo-azotea',
+            titulo: 'Azotea',
+            img: '/planos/vivienda/27-termo-azotea.webp',
+            full: '/planos/vivienda/27-termo-azotea-full.webp',
+            w: 1400,
+            h: 1804
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'peatonal-san-justo',
+    titulo: 'Peatonal de Plaza de San Justo',
+    resumen: 'Proyecto del Municipio de La Matanza para la peatonal de la plaza de San Justo, sobre las calles Irigoyen y T. J. Villegas, entre Dr. I. Arieta y Almafuerte. Incluye las planialtimetrías de las canaletas pluviales, con conductos de Ø600 y Ø500 mm y pendiente de 2 ‰, y el perfil tipo del nuevo pavimento de hormigón simple H30.',
+    meta: [
+      {
+        l: 'Comitente',
+        v: 'Municipio de La Matanza'
+      },
+      {
+        l: 'Ubicación',
+        v: 'San Justo, La Matanza'
+      },
+      {
+        l: 'Alcance',
+        v: 'Canaletas pluviales y pavimento de hormigón',
+        full: true
+      }
+    ],
+    laminas: [
+      {
+        id: '01-canaleta-villegas',
+        titulo: 'Canaleta T. J. Villegas',
+        descripcion: 'Planialtimetría de la canaleta sobre T. J. Villegas, entre Dr. I. Arieta y Almafuerte. Traza en planta del conducto proyectado de Ø600 mm con sus sumideros y cámaras de enlace, y perfil longitudinal con cotas de terreno, extradós y fondo de caño, tapadas y pendiente.',
+        specs: [
+          'Conducto Ø600 mm',
+          'Pendiente 2 ‰',
+          'Esc. H 1:500 · V 1:50'
+        ],
+        img: '/planos/peatonal/01-canaleta-villegas.webp',
+        full: '/planos/peatonal/01-canaleta-villegas-full.webp',
+        w: 2000,
+        h: 1178
+      },
+      {
+        id: '02-canaleta-irigoyen-600',
+        titulo: 'Canaleta Irigoyen · Ø600',
+        descripcion: 'Planialtimetría de la canaleta sobre Irigoyen, del lado de la plaza, con conducto proyectado de Ø600 mm, sumideros y cámaras de enlace. Perfil longitudinal con progresivas, cotas de pavimento y de fondo de caño, tapadas y pendientes.',
+        specs: [
+          'Conducto Ø600 mm',
+          'Pendiente 2 ‰',
+          'Progresivas y tapadas'
+        ],
+        img: '/planos/peatonal/02-canaleta-irigoyen-600.webp',
+        full: '/planos/peatonal/02-canaleta-irigoyen-600-full.webp',
+        w: 2000,
+        h: 1250
+      },
+      {
+        id: '03-canaleta-irigoyen-600-500',
+        titulo: 'Canaleta Irigoyen · Ø600 / Ø500',
+        descripcion: 'Variante de la canaleta sobre Irigoyen en la que los últimos tramos se resuelven con conducto de Ø500 mm. Planta con la traza y los sumideros a desplazar, y perfil longitudinal con cotas, tapadas y pendientes.',
+        specs: [
+          'Conductos Ø600 y Ø500 mm',
+          'Pendiente 2 ‰'
+        ],
+        img: '/planos/peatonal/03-canaleta-irigoyen-600-500.webp',
+        full: '/planos/peatonal/03-canaleta-irigoyen-600-500-full.webp',
+        w: 2000,
+        h: 1250
+      },
+      {
+        id: '04-canaleta-irigoyen-traza',
+        titulo: 'Canaleta Irigoyen · traza alternativa',
+        descripcion: 'Planialtimetría de la canaleta sobre Irigoyen con conducto de Ø600 mm hasta Almafuerte y continuación en Ø500 mm por el cruce. Planta de la traza y perfil longitudinal con progresivas, cotas y tapadas.',
+        specs: [
+          'Conductos Ø600 y Ø500 mm',
+          'Pendiente 2 ‰'
+        ],
+        img: '/planos/peatonal/04-canaleta-irigoyen-traza.webp',
+        full: '/planos/peatonal/04-canaleta-irigoyen-traza-full.webp',
+        w: 2000,
+        h: 1250
+      },
+      {
+        id: '05-perfil-tipo-pavimento',
+        titulo: 'Perfil tipo del pavimento',
+        descripcion: 'Perfil tipo del pavimento de hormigón simple H30 de 11,00 m de ancho, construido sobre la base de adoquines existentes, con sub-base de suelo seleccionado de 0,20 m y canaletas laterales de 0,60 m de ancho.',
+        specs: [
+          'Hormigón simple H30',
+          'Malla Q524',
+          'Ancho 11,00 m',
+          'Canaletas de 0,60 m'
+        ],
+        img: '/planos/peatonal/05-perfil-tipo-pavimento.webp',
+        full: '/planos/peatonal/05-perfil-tipo-pavimento-full.webp',
+        w: 1802,
+        h: 1134
+      }
+    ]
   },
 ]
 
