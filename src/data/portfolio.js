@@ -78,7 +78,7 @@ export const proyectos = [
   {
     id: 'vivienda-unifamiliar',
     titulo: 'Vivienda unifamiliar',
-    resumen: 'Proyecto académico realizado en 2020 dentro de la carrera de Ingeniería Civil de la UNLaM. Diseño y documentación completa de una vivienda de dos plantas con subsuelo: arquitectura, estructura de hormigón armado e instalaciones sanitaria, de gas, eléctrica y termomecánica. El programa incluye una sala de cine en el subsuelo; living, cocina-comedor, oficina y salón de música en planta baja; y tres dormitorios con play-room en el primer piso.',
+    resumen: 'Proyecto académico realizado dentro de la carrera de Ingeniería Civil de la UNLaM. Diseño y documentación completa de una vivienda de dos plantas con subsuelo: arquitectura, estructura de hormigón armado e instalaciones sanitarias, de gas, eléctricas y termomecánicas.',
     meta: [
       {
         l: 'Tipo',
@@ -93,7 +93,7 @@ export const proyectos = [
       {
         id: 'arquitectura',
         titulo: 'Arquitectura',
-        descripcion: 'Plantas de subsuelo, planta baja, primer piso y azotea, cortes A-A y B-B y vistas de frente, contrafrente y laterales. Definición de locales, circulaciones, niveles y aberturas.',
+        descripcion: '',
         specs: [
           'Plantas, cortes y vistas',
           'Escalas 1:70 a 1:150'
@@ -176,7 +176,7 @@ export const proyectos = [
       {
         id: 'estructura',
         titulo: 'Estructura',
-        descripcion: 'Plantas de estructura de hormigón armado bajo subsuelo, sobre subsuelo, sobre planta baja y sobre primer piso: fundaciones, columnas, vigas y losas con su dimensionado.',
+        descripcion: '',
         specs: [
           'Hormigón armado',
           'Losas de 12 cm',
@@ -219,7 +219,7 @@ export const proyectos = [
       },
       {
         id: 'sanitaria',
-        titulo: 'Sanitaria',
+        titulo: 'Instalaciones sanitarias',
         descripcion: 'Instalación sanitaria y de agua por planta: desagües cloacales y pluviales, provisión de agua fría y caliente, tanque de reserva y equipo de bombeo desde el subsuelo.',
         specs: [
           'Tanque de reserva 1000 l',
@@ -263,8 +263,8 @@ export const proyectos = [
       },
       {
         id: 'gas',
-        titulo: 'Gas',
-        descripcion: 'Instalación de gas en planta baja con el recorrido de la cañería y los artefactos conectados.',
+        titulo: 'Instalaciones de gas',
+        descripcion: '',
         specs: [
           'Planta baja',
           'Escala 1:100'
@@ -282,8 +282,8 @@ export const proyectos = [
       },
       {
         id: 'electrica',
-        titulo: 'Eléctrica',
-        descripcion: 'Instalación eléctrica en subsuelo, planta baja y primer piso, en dos juegos de planos: luminarias y tomacorrientes, con circuitos, secciones de conductores y cañerías.',
+        titulo: 'Instalaciones eléctricas',
+        descripcion: '',
         specs: [
           'Luminarias y tomacorrientes',
           'Conductores de 1,5 a 10 mm²'
@@ -341,7 +341,7 @@ export const proyectos = [
       },
       {
         id: 'termomecanica',
-        titulo: 'Termomecánica',
+        titulo: 'Instalaciones termomecánicas',
         descripcion: 'Climatización con equipos de aire acondicionado: ubicación de unidades interiores y exteriores y recorrido de cañerías en planta baja, primer piso y azotea.',
         specs: [
           'Aire acondicionado',
@@ -378,18 +378,9 @@ export const proyectos = [
   },
   {
     id: 'peatonal-san-justo',
-    titulo: 'Peatonal de Plaza de San Justo',
+    titulo: 'Peatonal - Plaza de San Justo',
     resumen: 'Proyecto del Municipio de La Matanza para la peatonal de la plaza de San Justo, sobre las calles Irigoyen y T. J. Villegas, entre Dr. I. Arieta y Almafuerte. Incluye las planialtimetrías de las canaletas pluviales, con conductos de Ø600 y Ø500 mm y pendiente de 2 ‰, y el perfil tipo del nuevo pavimento de hormigón simple H30.',
-    meta: [
-      {
-        l: 'Comitente',
-        v: 'Municipio de La Matanza'
-      },
-      {
-        l: 'Ubicación',
-        v: 'San Justo, La Matanza'
-      }
-    ],
+    meta: [],
     laminas: [
       {
         id: '01-canaleta-villegas',

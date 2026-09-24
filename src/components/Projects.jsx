@@ -104,7 +104,7 @@ function ProjectCase({ proyecto, index }) {
                 : `Lámina ${pad(active + 1)} de ${pad(hojas.length)}`}
             </p>
             <h4 className="sheet-title">{agrupado ? hoja.titulo : grupo.titulo}</h4>
-            <p className="sheet-desc">{grupo.descripcion}</p>
+            {grupo.descripcion && <p className="sheet-desc">{grupo.descripcion}</p>}
           </div>
           <div className="sheet-actions">
             <button type="button" className="btn btn-primary" onClick={() => setViewer(true)}>
