@@ -418,7 +418,7 @@ export const proyectos = [
       },
       {
         id: '02-canaleta-irigoyen-600',
-        titulo: 'Canaleta Irigoyen · Ø600',
+        titulo: 'Canaleta Irigoyen',
         descripcion: 'Planialtimetría de la canaleta sobre Irigoyen, del lado de la plaza, con conducto proyectado de Ø600 mm, sumideros y cámaras de enlace. Perfil longitudinal con progresivas, cotas de pavimento y de fondo de caño, tapadas y pendientes.',
         specs: [
           'Conducto Ø600 mm',
@@ -432,7 +432,7 @@ export const proyectos = [
       },
       {
         id: '03-canaleta-irigoyen-600-500',
-        titulo: 'Canaleta Irigoyen · Ø600 / Ø500',
+        titulo: 'Canaleta Irigoyen · variante',
         descripcion: 'Variante de la canaleta sobre Irigoyen en la que los últimos tramos se resuelven con conducto de Ø500 mm. Planta con la traza y los sumideros a desplazar, y perfil longitudinal con cotas, tapadas y pendientes.',
         specs: [
           'Conductos Ø600 y Ø500 mm',
