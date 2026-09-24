@@ -26,10 +26,10 @@ export default function Navbar() {
     <header
       style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
-        borderBottom: solid ? '1px solid var(--border)' : '1px solid transparent',
-        background: solid ? 'rgba(247,244,239,0.96)' : 'transparent',
-        backdropFilter: solid ? 'blur(12px)' : 'none',
-        transition: 'background 0.4s, border-color 0.4s',
+        // Siempre sólido: el hero tiene foto a sangre y el nav no debe pisarla
+        borderBottom: `1px solid ${solid ? 'var(--border)' : 'var(--ink)'}`,
+        background: 'var(--paper)',
+        transition: 'border-color 0.4s',
       }}
     >
       <div style={{
