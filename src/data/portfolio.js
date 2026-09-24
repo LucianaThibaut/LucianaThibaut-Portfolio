@@ -29,69 +29,51 @@ export const herramientas = [
   },
 ]
 
-// `plano` elige el dibujo técnico de la tarjeta (ver Projects.jsx)
+// Proyectos reales. Cada proyecto tiene una o más láminas (planos).
+// Las imágenes viven en /public/planos: `img` para la vista en página,
+// `full` en alta resolución para el visor con zoom.
 export const proyectos = [
   {
-    id: 1,
-    titulo: 'Catastro de obras hidráulicas',
-    subtitulo: 'Ciudad de Buenos Aires · Soluciones Químicas S.A.',
-    periodo: '2025 — actualidad',
-    descripcion:
-      'Actualización catastral de obras hidráulicas de CABA en CAD. Elaboración, control y actualización de planos a partir de relevamientos topográficos y documentación existente, asegurando orden y trazabilidad entre área técnica y obra.',
-    tags: ['AutoCAD', 'Catastro', 'Relevamiento topográfico', 'Trazabilidad'],
-    plano: 'catastro',
-    rol: 'Analista de CAD',
-    entregables: 'Planos catastrales, informes técnicos',
-    destacado: true,
-  },
-  {
-    id: 2,
-    titulo: 'Redes de desagüe pluvial',
-    subtitulo: 'Municipalidad de La Matanza · Dirección de Hidráulica',
-    periodo: '2022 — 2025',
-    descripcion:
-      'Diseño y cálculo de redes de desagüe pluvial para obra pública. Elaboración de memorias de cálculo, informes técnicos y planos generales y de detalle.',
-    tags: ['Hidráulica', 'Cálculo', 'Memorias', 'Planos de detalle'],
-    plano: 'pluvial',
-    rol: 'Proyecto y cálculo',
-    entregables: 'Memorias de cálculo, planos generales y de detalle',
-    destacado: true,
-  },
-  {
-    id: 3,
-    titulo: 'Pavimentos y dirección de obra',
-    subtitulo: 'Municipalidad de La Matanza · Dirección de Pavimentos',
-    periodo: '2022 — 2025',
-    descripcion:
-      'Planialtimetrías y planos de replanteo para obras de pavimento. Gestión de certificaciones, seguimiento de partes diarios y avance, inspecciones y visitas técnicas a obra.',
-    tags: ['Planialtimetría', 'Replanteo', 'Certificaciones', 'Inspección'],
-    plano: 'pavimento',
-    rol: 'Proyecto y dirección de obra',
-    entregables: 'Planialtimetrías, planos de replanteo, certificados',
-  },
-  {
-    id: 4,
-    titulo: 'Instalaciones contra incendio',
-    subtitulo: 'Obras industriales · Damianich & Sons',
-    periodo: '2022',
-    descripcion:
-      'Cálculo y diseño de instalaciones de incendio para plantas industriales. Memorias de cálculo, planos generales, vistas axonométricas y detalles constructivos, con relevamiento y asesoramiento al cliente.',
-    tags: ['Incendio', 'Axonometrías', 'Detalles constructivos', 'Relevamiento'],
-    plano: 'incendio',
-    rol: 'Proyectista',
-    entregables: 'Memoria de cálculo, planos, axonometrías, detalles',
-  },
-  {
-    id: 5,
-    titulo: 'Instalaciones y evacuación en edificios públicos',
-    subtitulo: 'Ministerio de Agricultura, Ganadería y Pesca',
-    periodo: '2019 — 2021',
-    descripcion:
-      'Planos estructurales y de instalaciones sanitarias, eléctricas, de incendio y gas. Análisis de evacuación de incendio con su documentación técnica, relevamientos y seguimiento de obras.',
-    tags: ['Instalaciones', 'Evacuación', 'Estructuras', 'Informes'],
-    plano: 'evacuacion',
-    rol: 'Asistente técnica',
-    entregables: 'Planos de instalaciones, análisis de evacuación, informes',
+    id: 'planta-industrial',
+    titulo: 'Proyecto de planta industrial',
+    contexto: 'Planta industrial',
+    anio: '2026',
+    resumen:
+      'Tres planos de un mismo sector: el movimiento de suelo que define niveles y pendientes, las vigas de hormigón armado sobre las que circulan las grúas RTG y las fundaciones de las torres de iluminación, coordinadas con los pavimentos y las vigas.',
+    rol: 'Desarrollo de planos',
+    materiales: 'Hormigón H-30 · Acero ADN420',
+    laminas: [
+      {
+        id: 'movimiento-de-suelo',
+        titulo: 'Movimiento de suelo',
+        descripcion:
+          'Desarrollo de plano de movimiento de suelo, con definición de niveles, pendientes y geometría del sector. Representación mediante planta general y cortes longitudinales y transversales para definir la configuración altimétrica del proyecto.',
+        specs: ['Planta general', 'Cortes longitudinales y transversales', 'Niveles y pendientes'],
+        img: '/planos/01-movimiento-de-suelo.webp',
+        full: '/planos/01-movimiento-de-suelo-full.webp',
+        w: 1978, h: 922,
+      },
+      {
+        id: 'vigas-rtg',
+        titulo: 'Vigas RTG',
+        descripcion:
+          'Desarrollo de plano de armaduras y prearmado de vigas RTG de hormigón armado. Detalle de las distintas tipologías mediante vistas en planta y lateral, disposición de armaduras, empalmes, juntas de dilatación, cortes típicos y esquema general de distribución de prearmados.',
+        specs: ['Hormigón H-30', 'Acero ADN420', 'Armaduras y prearmado', 'Juntas de dilatación'],
+        img: '/planos/02-vigas-rtg.webp',
+        full: '/planos/02-vigas-rtg-full.webp',
+        w: 2000, h: 1616,
+      },
+      {
+        id: 'fundaciones-torres',
+        titulo: 'Fundaciones de torres de iluminación',
+        descripcion:
+          'Desarrollo de plano de fundaciones para torres de iluminación, incluyendo ubicación y replanteo de pilotes, definición de niveles de proyecto y detalle de la geometría de fundación. Coordinación de las fundaciones con los distintos niveles de pavimento y las vigas RTG del sector.',
+        specs: ['Pilotes P1 Ø1,00 m', 'Hormigón H-30', 'Acero ADN420', 'Replanteo de pilotes'],
+        img: '/planos/03-fundaciones-torres-iluminacion.webp',
+        full: '/planos/03-fundaciones-torres-iluminacion-full.webp',
+        w: 2000, h: 867,
+      },
+    ],
   },
 ]
 
