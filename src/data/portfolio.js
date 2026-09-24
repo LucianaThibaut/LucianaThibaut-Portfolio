@@ -457,18 +457,16 @@ export const proyectos = [
     id: 'calles-a-pavimentar',
     titulo: 'Planialtimetrías de calles a pavimentar',
     resumen:
-      'Proyectos de pavimentación desarrollados para el Municipio de La Matanza en la localidad de Isidro Casanova (2023–2024). Reúne tres proyectos viales sobre las calles Tornquist, Bartolomé de las Casas y D. Alighieri, con la definición geométrica en planta, el perfil longitudinal con pendientes de escurrimiento, cotas de rasante y terreno natural, vinculación altimétrica a puntos fijos y relevamiento de niveles de umbrales en línea municipal.',
+      'Proyectos de pavimentación desarrollados para el Municipio de La Matanza. Reúne tres proyectos viales con la definición geométrica en planta, el perfil longitudinal con pendientes de escurrimiento, cotas de rasante y terreno natural, vinculación altimétrica a puntos fijos y relevamiento de niveles de umbrales en línea municipal.',
     meta: [
-      { l: 'Comitente', v: 'Municipio de La Matanza' },
       { l: 'Período', v: '2023 — 2024' },
-      { l: 'Ubicación', v: 'Isidro Casanova, La Matanza' },
     ],
     laminas: [
       {
         id: '01-tornquist',
         titulo: 'Calle Tornquist',
         descripcion:
-          'Planialtimetría para la pavimentación de la calle Tornquist, entre Pedro Ferré y Vogel. Traza en planta con bocacalles, cámaras de enlace y sumideros proyectados S2 (a construir y a reemplazar con hoya). Perfil longitudinal con cotas de terreno y proyecto, progresivas, pendientes de 2,8 ‰ a 10,3 ‰ y verificación de cotas de umbrales sobre línea municipal en ambos márgenes.',
+          'Planialtimetría para la pavimentación de la calle Tornquist, entre Pedro Ferré y Vogel. Traza en planta con bocacalles, cámaras de enlace y sumideros proyectados S2 (a construir y a reemplazar con hoya). Perfil longitudinal con cotas de terreno y proyecto, progresivas, pendientes y verificación de cotas de umbrales sobre línea municipal en ambos márgenes.',
         specs: [
           'Tramo: Pedro Ferré a Vogel',
           'Pendientes 2,8 ‰ a 10,3 ‰',
@@ -485,7 +483,7 @@ export const proyectos = [
         id: '02-bartolome-de-las-casas',
         titulo: 'Calle Bartolomé de las Casas',
         descripcion:
-          'Planialtimetría para la pavimentación de Bartolomé de las Casas, entre Tomás A. Edison y Tornquist (cruzando Elías Bedoya y Hertz). Traza en planta con empalmes a pavimentos existentes y proyectados. Perfil longitudinal con progresivas, cotas de pavimento y terreno, pendientes de 2,00 ‰ a 7,05 ‰, plano de comparación a 24,00 m y relevamiento de niveles de umbrales.',
+          'Planialtimetría para la pavimentación de Bartolomé de las Casas, entre Tomás A. Edison y Tornquist (cruzando Elías Bedoya y Hertz). Traza en planta con empalmes a pavimentos existentes y proyectados. Perfil longitudinal con cotas de terreno y proyecto, progresivas, pendientes y verificación de cotas de umbrales sobre línea municipal en ambos márgenes.',
         specs: [
           'Tramo: Tomás A. Edison a Tornquist',
           'Pendientes 2,00 ‰ a 7,05 ‰',
@@ -502,7 +500,7 @@ export const proyectos = [
         id: '03-d-alighieri',
         titulo: 'Calle D. Alighieri',
         descripcion:
-          'Planialtimetría para la pavimentación de la calle D. Alighieri, entre B. de las Casas y Fracción. Traza en planta vinculada al conducto circular de Ø800 mm existente y perfil longitudinal con plano de comparación a 24,00 m, pendientes de 5,17 ‰ y 17,6 ‰, vinculación a punto fijo auxiliar (P.F. Cota 25,865) y cotas de umbrales.',
+          'Planialtimetría para la pavimentación de la calle D. Alighieri, entre B. de las Casas y Fracción. Traza en planta vinculada al conducto circular existente. Perfil longitudinal con cotas de terreno y proyecto, progresivas, pendientes y verificación de cotas de umbrales sobre línea municipal en ambos márgenes.',
         specs: [
           'Tramo: B. de las Casas a Fracción',
           'Pendientes 5,17 ‰ y 17,6 ‰',
