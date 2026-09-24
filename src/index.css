@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --paper: #F7F4EF;
+  --ink: #0D0D0D;
+  --green: #1C3829;
+  --green-light: #2A5240;
+  --sand: #C5B49A;
+  --muted: #787672;
+  --border: #D8D4CC;
+  --white: #FFFFFF;
+}
+
+html {
+  scroll-behavior: smooth;
+  cursor: none;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ─── Custom Cursor ─────────────────────────── */
+.cur-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--ink);
+  position: fixed;
+  top: 0; left: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: background 0.2s;
+}
+
+.cur-ring {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--ink);
+  position: fixed;
+  top: 0; left: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.25s, height 0.25s, border-color 0.25s;
+}
+
+.cur-ring.expanded {
+  width: 52px;
+  height: 52px;
+  border-color: var(--green);
+}
+
+/* ─── Progress bar ──────────────────────────── */
+.prog {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  background: var(--green);
+  z-index: 200;
+  transition: width 0.08s linear;
+}
+
+/* ─── Scroll reveal ─────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s cubic-bezier(0.16,1,0.3,1), transform 0.65s cubic-bezier(0.16,1,0.3,1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ─── Marquee ───────────────────────────────── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track { animation: marquee 22s linear infinite; }
+
+/* ─── Skill bar ─────────────────────────────── */
+.skill-bar-fill {
+  height: 1px;
+  background: var(--green);
+  width: 0;
+  transition: width 1s cubic-bezier(0.16,1,0.3,1);
+}
+.skill-bar-fill.animated { width: var(--target-width); }
+
+/* ─── Hover line ────────────────────────────── */
+.hline {
+  position: relative;
+}
+.hline::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0;
+  height: 1px;
+  width: 0;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+.hline:hover::after { width: 100%; }
+
+/* ─── Card hover fill ───────────────────────── */
+.card-fill {
+  position: relative;
+  overflow: hidden;
+}
+.card-fill::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--green);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.45s cubic-bezier(0.16,1,0.3,1);
+  z-index: 0;
+}
+.card-fill:hover::before { transform: scaleY(1); }
+.card-fill > * { position: relative; z-index: 1; }
+.card-fill:hover { color: var(--paper); border-color: var(--green); }
+.card-fill:hover .cf-muted { color: rgba(247,244,239,0.55); }
+.card-fill:hover .cf-accent { color: var(--paper); }
+
+/* ─── Form floating label ───────────────────── */
+.field-wrap { position: relative; }
+.field-label {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  color: var(--muted);
+  pointer-events: none;
+  transition: top 0.2s, font-size 0.2s, color 0.2s;
+}
+.field-wrap.active .field-label,
+.field-wrap.filled .field-label {
+  top: 10px;
+  transform: none;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+.field-input {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 22px 16px 8px;
+  font-size: 0.875rem;
+  color: var(--paper);
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: inherit;
+}
+.field-input:focus { border-color: rgba(247,244,239,0.6); }
+
+/* ─── Scrollbar ─────────────────────────────── */
+::-webkit-scrollbar { width: 2px; }
+::-webkit-scrollbar-track { background: var(--paper); }
+::-webkit-scrollbar-thumb { background: var(--green); }
+
+/* ─── Selection ─────────────────────────────── */
+::selection { background: var(--green); color: var(--paper); }
