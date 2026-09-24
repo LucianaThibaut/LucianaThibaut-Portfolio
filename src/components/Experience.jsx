@@ -7,7 +7,7 @@ import { experiencia, formacion } from '../data/portfolio'
 const tools = [
   { name: 'AutoCAD · Civil 3D',   tag: 'Planos, catastro y replanteo' },
   { name: 'EPANET · FlowMaster',  tag: 'Cálculo hidráulico' },
-  { name: 'Robot · RAM Elements', tag: 'Cálculo estructural' },
+  { name: 'Robot Structural',     tag: 'Cálculo estructural' },
   { name: 'Excel avanzado',       tag: 'Tablas dinámicas, macros/VBA' },
   { name: 'SharePoint · Teams',   tag: 'Gestión documental' },
 ]

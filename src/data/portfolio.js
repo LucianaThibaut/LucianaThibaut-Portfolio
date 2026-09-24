@@ -623,6 +623,5 @@ export const marqueeItems = [
   'FlowMaster',
   'Robot Structural',
   'SharePoint',
-  'ISO 9001',
   'Excel avanzado',
 ]
